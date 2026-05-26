@@ -47,6 +47,6 @@ https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/reda001.au60etl933
 
 ## Links
 
-- Website: [ftcapital.com.au](https://ftcapital.com.au)
+- Website: [www.ftcapital.com.au](https://www.ftcapital.com.au)
 - PDS: [Product Disclosure Statement](https://edge.sitecorecloud.io/eqtservicesd49b-equity3a10-prod1271-d16d/media/equitytrustees/files/instofunds/future-trading-capital-pty-limited/ft-capital-multi-class-investment-fund-us-large-cap-enhanced-complex-class-pds.pdf)
 - TMD: [Target Market Determination](https://swift.zeidlerlegalservices.com/tmds/ETL9337AU)
