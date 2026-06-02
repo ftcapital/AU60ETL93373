@@ -37,6 +37,28 @@ PriceReport (reda.001)
         └── byUsrDfndTmPrd[] (rolling returns)
 ```
 
+## MPI Report
+
+Open futures positions as at valuation date, published in CSV format.
+
+**File:** `ftc_ftus_mpi_latest.csv`
+
+| Column | Description |
+|--------|-------------|
+| date | Valuation date (YYYYMMDD) |
+| bloomberg | Bloomberg ticker |
+| side | BUY or SELL (net) |
+| quantity | Net open contracts |
+| venue | Listing exchange |
+| product_name | Contract description |
+| product_code | Globex symbol |
+
+Fetch the latest MPI data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/ftc_ftus_mpi_latest.csv
+```
+
 ## Usage
 
 Fetch the latest NAV data:
