@@ -1,0 +1,166 @@
+{
+  "data": {
+    "2026-04-09": {
+      "percent_benchmark": 0.0,
+      "percent_nav": 0.0
+    },
+    "2026-04-10": {
+      "percent_benchmark": -0.1166,
+      "percent_nav": -0.1194
+    },
+    "2026-04-13": {
+      "percent_benchmark": 0.8669,
+      "percent_nav": 0.8654
+    },
+    "2026-04-14": {
+      "percent_benchmark": 2.0617,
+      "percent_nav": 1.9895
+    },
+    "2026-04-15": {
+      "percent_benchmark": 2.874,
+      "percent_nav": 2.7554
+    },
+    "2026-04-16": {
+      "percent_benchmark": 3.1144,
+      "percent_nav": 2.9941
+    },
+    "2026-04-17": {
+      "percent_benchmark": 4.3456,
+      "percent_nav": 4.148
+    },
+    "2026-04-20": {
+      "percent_benchmark": 4.1489,
+      "percent_nav": 4.0088
+    },
+    "2026-04-21": {
+      "percent_benchmark": 3.4495,
+      "percent_nav": 3.3025
+    },
+    "2026-04-22": {
+      "percent_benchmark": 4.4877,
+      "percent_nav": 4.3569
+    },
+    "2026-04-23": {
+      "percent_benchmark": 4.0833,
+      "percent_nav": 3.969
+    },
+    "2026-04-24": {
+      "percent_benchmark": 4.8301,
+      "percent_nav": 4.725
+    },
+    "2026-04-28": {
+      "percent_benchmark": 4.484,
+      "percent_nav": 4.3967
+    },
+    "2026-04-29": {
+      "percent_benchmark": 4.4403,
+      "percent_nav": 4.3768
+    },
+    "2026-04-30": {
+      "percent_benchmark": 5.544,
+      "percent_nav": 5.4014
+    },
+    "2026-05-01": {
+      "percent_benchmark": 5.7516,
+      "percent_nav": 5.5605
+    },
+    "2026-05-04": {
+      "percent_benchmark": 5.3473,
+      "percent_nav": 5.2223
+    },
+    "2026-05-05": {
+      "percent_benchmark": 6.1778,
+      "percent_nav": 6.227
+    },
+    "2026-05-06": {
+      "percent_benchmark": 7.6677,
+      "percent_nav": 7.5798
+    },
+    "2026-05-07": {
+      "percent_benchmark": 7.2815,
+      "percent_nav": 7.1819
+    },
+    "2026-05-08": {
+      "percent_benchmark": 8.0975,
+      "percent_nav": 7.9976
+    },
+    "2026-05-11": {
+      "percent_benchmark": 8.3561,
+      "percent_nav": 8.2165
+    },
+    "2026-05-12": {
+      "percent_benchmark": 8.2068,
+      "percent_nav": 8.1269
+    },
+    "2026-05-13": {
+      "percent_benchmark": 8.8333,
+      "percent_nav": 8.7039
+    },
+    "2026-05-14": {
+      "percent_benchmark": 9.6492,
+      "percent_nav": 9.5494
+    },
+    "2026-05-15": {
+      "percent_benchmark": 8.2905,
+      "percent_nav": 8.3557
+    },
+    "2026-05-18": {
+      "percent_benchmark": 8.1958,
+      "percent_nav": 8.306
+    },
+    "2026-05-19": {
+      "percent_benchmark": 7.5001,
+      "percent_nav": 7.739
+    },
+    "2026-05-20": {
+      "percent_benchmark": 8.5747,
+      "percent_nav": 8.7238
+    },
+    "2026-05-21": {
+      "percent_benchmark": 8.7823,
+      "percent_nav": 8.9625
+    },
+    "2026-05-22": {
+      "percent_benchmark": 9.1465,
+      "percent_nav": 9.3206
+    },
+    "2026-05-26": {
+      "percent_benchmark": 9.8168,
+      "percent_nav": 9.9771
+    },
+    "2026-05-27": {
+      "percent_benchmark": 9.8605,
+      "percent_nav": 10.1562
+    },
+    "2026-05-28": {
+      "percent_benchmark": 10.4688,
+      "percent_nav": 10.7232
+    },
+    "2026-05-29": {
+      "percent_benchmark": 10.6728,
+      "percent_nav": 10.8525
+    },
+    "2026-06-01": {
+      "percent_benchmark": 10.9278,
+      "percent_nav": 11.2305
+    }
+  },
+  "meta": {
+    "apir": "ETL9337AU",
+    "benchmark_code": "ES",
+    "benchmark_name": "E-mini S&P 500 Stock Price Index Futures Lead Month Contract",
+    "class": "US Large Cap Enhanced Complex Class",
+    "currency": "AUD",
+    "fund": "FT Capital Multi Class Investment Fund",
+    "generated": "2026-06-03T06:06:51Z",
+    "high_water_mark_date": "2026-06-01",
+    "high_water_mark_nav": 1.1182,
+    "inception_date": "2026-04-09",
+    "isin": "AU60ETL93373",
+    "latest_date": "2026-06-01",
+    "latest_percent_alpha": 0.3027,
+    "latest_percent_benchmark": 10.9278,
+    "latest_percent_nav": 11.2305,
+    "schema_version": "1"
+  }
+}
