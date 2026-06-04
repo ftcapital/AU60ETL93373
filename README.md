@@ -37,6 +37,12 @@ PriceReport (reda.001)
         └── byUsrDfndTmPrd[] (rolling returns)
 ```
 
+Fetch the latest NAV data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/reda001.au60etl93373.json
+```
+
 ## MPI Report
 
 Open futures positions as at valuation date, published in CSV format.
@@ -57,6 +63,43 @@ Fetch the latest MPI data:
 
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/ftc_ftus_mpi_latest.csv
+```
+
+## Performance Chart
+
+Percentage returns from inception, rebased to 0% on the capital deployment date. Benchmark is the E-mini S&P 500 futures front contract. `benchmark_symbol` per data point handles futures contract rolls automatically.
+
+**File:** `chart_performance.au60etl93373.json`
+
+### Structure
+
+```
+{
+  "meta": {
+    "fund", "class", "isin", "apir", "currency",
+    "inception_date",
+    "benchmark_name", "benchmark_code",
+    "high_water_mark_nav", "high_water_mark_date",
+    "latest_date",
+    "latest_percent_nav", "latest_percent_benchmark", "latest_percent_alpha",
+    "generated", "schema_version"
+  },
+  "data": {
+    "YYYY-MM-DD": {
+      "percent_nav",        // % return from inception
+      "percent_benchmark",  // % return from inception
+      "benchmark_symbol"    // futures symbol on that date (e.g. ESM6)
+    }
+  }
+}
+```
+
+All `percent_*` values are percentage returns from `inception_date` (e.g. `5.45` = 5.45%). Alpha is `latest_percent_nav - latest_percent_benchmark`. The `meta` block is first for programmatic consumption — current return, HWM, and alpha are available without parsing `data`.
+
+Fetch the latest performance chart data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/chart_performance.au60etl93373.json
 ```
 
 ## Usage
