@@ -37,12 +37,6 @@ PriceReport (reda.001)
         └── byUsrDfndTmPrd[] (rolling returns)
 ```
 
-Fetch the latest NAV data:
-
-```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/reda001.au60etl93373.json
-```
-
 ## MPI Report
 
 Open futures positions as at valuation date, published in CSV format.
@@ -58,12 +52,6 @@ Open futures positions as at valuation date, published in CSV format.
 | venue | Listing exchange |
 | product_name | Contract description |
 | product_code | Globex symbol |
-
-Fetch the latest MPI data:
-
-```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/ftc_ftus_mpi_latest.csv
-```
 
 ## Performance Chart
 
@@ -96,18 +84,24 @@ Percentage returns from inception, rebased to 0% on the capital deployment date.
 
 All `percent_*` values are percentage returns from `inception_date` (e.g. `5.45` = 5.45%). Alpha is `latest_percent_nav - latest_percent_benchmark`. The `meta` block is first for programmatic consumption — current return, HWM, and alpha are available without parsing `data`.
 
-Fetch the latest performance chart data:
-
-```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/chart_performance.au60etl93373.json
-```
-
 ## Usage
 
 Fetch the latest NAV data:
 
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/reda001.au60etl93373.json
+```
+
+Fetch the latest MPI data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/ftc_ftus_mpi_latest.csv
+```
+
+Fetch the latest performance chart data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/chart_performance.au60etl93373.json
 ```
 
 ## Links
