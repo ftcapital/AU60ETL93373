@@ -1,48 +1,48 @@
 {
   "msgId": {
-    "creDtTm": "2026-06-10T00:00:00Z",
-    "id": "AU60ETL93373-20260610"
+    "creDtTm": "2026-06-11T00:00:00Z",
+    "id": "AU60ETL93373-20260611"
   },
   "pricValtnDtls": {
     "finInstrmDtls": {
       "isin": "AU60ETL93373"
     },
-    "navDtTm": "2026-06-10",
+    "navDtTm": "2026-06-11",
     "pricDtls": [
       {
         "tp": "NAVL",
         "val": {
-          "amt": 1.0752,
+          "amt": 1.093,
           "ccy": "AUD"
         }
       },
       {
         "tp": "OFFR",
         "val": {
-          "amt": 1.076,
+          "amt": 1.0938,
           "ccy": "AUD"
         }
       },
       {
         "tp": "BIDE",
         "val": {
-          "amt": 1.0744,
+          "amt": 1.0922,
           "ccy": "AUD"
         }
       }
     ],
     "ttlNAV": {
-      "amt": 215030.62,
+      "amt": 218607.58,
       "ccy": "AUD"
     },
     "valtnSttstcs": {
       "byUsrDfndTmPrd": [
         {
           "prd": {
-            "frDt": "2026-05-11",
-            "toDt": "2026-06-10"
+            "frDt": "2026-05-12",
+            "toDt": "2026-06-11"
           },
-          "pricChng": -0.0117
+          "pricChng": 0.0055
         }
       ],
       "hghstPricVal12Mnths": {
