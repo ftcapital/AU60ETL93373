@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/chart_performance.schema.json",
+  "$comment": "JSON Schema for the daily cumulative performance chart data file (au60etl93373_chart_performance.json).",
+  "title": "AU60ETL93373 Performance Chart Data",
+  "description": "JSON Schema for au60etl93373_chart_performance.json — daily cumulative performance data for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU) and its benchmark since inception. Updated each business day after NAV is published. All performance values are cumulative percentage returns since inception (inception date value = 0.0000). The benchmark is the E-mini S&P 500 Stock Price Index Futures Lead Month Contract; the active contract code (benchmark_symbol) changes on roll dates. The meta.high_water_mark_nav field is the highest NAV per unit recorded since inception and is used in the performance fee calculation. The file includes a schema_version field in meta.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["apir", "isin", "currency", "generated", "inception_date", "schema_version"],
+      "properties": {
+        "apir": {
+          "type": "string",
+          "const": "ETL9337AU",
+          "description": "APIR code of the fund class."
+        },
+        "fund": {
+          "type": "string",
+          "description": "Fund name."
+        },
+        "isin": {
+          "type": "string",
+          "const": "AU60ETL93373",
+          "description": "ISIN of the fund class."
+        },
+        "class": {
+          "type": "string",
+          "description": "Class name."
+        },
+        "currency": {
+          "type": "string",
+          "const": "AUD",
+          "description": "ISO 4217 currency code."
+        },
+        "generated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "File generation timestamp in UTC."
+        },
+        "class_code": {
+          "type": "string",
+          "const": "FTUS",
+          "description": "Internal class code."
+        },
+        "latest_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Most recent data date (YYYY-MM-DD)."
+        },
+        "benchmark_code": {
+          "type": "string",
+          "description": "Active benchmark futures contract code at latest_date (e.g. ESU6)."
+        },
+        "benchmark_name": {
+          "type": "string",
+          "description": "Full benchmark name."
+        },
+        "inception_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Fund class inception date (YYYY-MM-DD)."
+        },
+        "schema_version": {
+          "type": "string",
+          "description": "Schema version string."
+        },
+        "latest_percent_nav": {
+          "type": "number",
+          "description": "Cumulative NAV return since inception as a percentage."
+        },
+        "high_water_mark_nav": {
+          "type": "number",
+          "description": "Highest NAV per unit since inception (AUD). Used in performance fee calculation."
+        },
+        "high_water_mark_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the high water mark was set."
+        },
+        "latest_percent_alpha": {
+          "type": "number",
+          "description": "Cumulative alpha (NAV return minus benchmark return) since inception as a percentage."
+        },
+        "latest_percent_benchmark": {
+          "type": "number",
+          "description": "Cumulative benchmark return since inception as a percentage."
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Keys are ISO 8601 dates (YYYY-MM-DD), one entry per business day since inception. Values are daily performance snapshots.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["percent_nav", "benchmark_symbol", "percent_benchmark"],
+        "properties": {
+          "percent_nav": {
+            "type": "number",
+            "description": "Cumulative NAV return since inception as a percentage. Value on inception date is 0.0000."
+          },
+          "benchmark_symbol": {
+            "type": "string",
+            "description": "Active benchmark futures contract code on this date (e.g. ESM6, ESU6). Changes on contract roll dates."
+          },
+          "percent_benchmark": {
+            "type": "number",
+            "description": "Cumulative benchmark return since inception as a percentage. Value on inception date is 0.0000."
+          }
+        }
+      }
+    }
+  }
+}
