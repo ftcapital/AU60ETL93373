@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/mpi.schema.json",
+  "$comment": "Data dictionary for the daily MPI (open futures positions) CSV file (ftc_ftus_mpi_latest.csv).",
+  "title": "AU60ETL93373 MPI — Open Futures Positions",
+  "description": "Data dictionary for ftc_ftus_mpi_latest.csv — the daily Material Portfolio Information file for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373). Each row represents one open futures position held by the fund at close of the trading day. The file has no header row; fields are positional and comma-delimited. The fund trades E-mini S&P 500 (ES) and Micro E-mini S&P 500 (MES) futures on CME. Contract codes follow the convention: root + month code (H=Mar, M=Jun, U=Sep, Z=Dec) + year digit(s). The file contains only the latest day's positions; historical position data is not published.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "text/csv",
+      "description": "MIME type of the data file."
+    },
+    "encoding": {
+      "const": "UTF-8"
+    },
+    "delimiter": {
+      "const": ","
+    },
+    "header_row": {
+      "const": false,
+      "description": "The file has no header row. Fields are positional."
+    },
+    "fields": {
+      "type": "array",
+      "items": [
+        {
+          "position": 1,
+          "name": "date",
+          "type": "string",
+          "format": "YYYYMMDD",
+          "example": "20260707",
+          "description": "Position date."
+        },
+        {
+          "position": 2,
+          "name": "bloomberg_ticker",
+          "type": "string",
+          "example": "MESU6 INDEX",
+          "description": "Bloomberg ticker for the futures contract including asset class suffix."
+        },
+        {
+          "position": 3,
+          "name": "side",
+          "type": "string",
+          "enum": ["BUY", "SELL"],
+          "description": "Direction of the position."
+        },
+        {
+          "position": 4,
+          "name": "contracts",
+          "type": "integer",
+          "description": "Number of contracts held."
+        },
+        {
+          "position": 5,
+          "name": "exchange",
+          "type": "string",
+          "example": "CME",
+          "description": "Exchange where the contract is listed."
+        },
+        {
+          "position": 6,
+          "name": "description",
+          "type": "string",
+          "example": "MES 18SEP26",
+          "description": "Human-readable contract description including expiry month and year."
+        },
+        {
+          "position": 7,
+          "name": "contract_code",
+          "type": "string",
+          "example": "MESU6",
+          "description": "Exchange contract code. Format: root + month code + year digit(s). Month codes: H=Mar, M=Jun, U=Sep, Z=Dec."
+        }
+      ]
+    }
+  }
+}
