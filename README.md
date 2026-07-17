@@ -9,6 +9,16 @@ NAV price data for FT Capital Multi Class Investment Fund - US Large Cap Enhance
 | ISIN | AU60ETL93373 |
 | APIR | ETL9337AU |
 | ARSN | 652 933 616 |
+| Bloomberg | FTUSLCE AU \<Equity> |
+| Currency | AUD |
+
+## Service Providers
+
+| Role | Entity |
+|------|--------|
+| Responsible Entity | Equity Trustees Limited |
+| Fund Manager | Future Trading Capital Pty Limited |
+| Administrator & Custodian | Apex Fund Services Pty Ltd |
 
 ## Data Format
 
@@ -46,12 +56,14 @@ Open futures positions as at valuation date, published in CSV format.
 | Column | Description |
 |--------|-------------|
 | date | Valuation date (YYYYMMDD) |
-| bloomberg | Bloomberg ticker |
+| bloomberg_ticker | Bloomberg ticker |
 | side | BUY or SELL (net) |
-| quantity | Net open contracts |
-| venue | Listing exchange |
-| product_name | Contract description |
-| product_code | Globex symbol |
+| contracts | Net open contracts |
+| exchange | Listing exchange |
+| description | Contract description |
+| contract_code | Globex symbol |
+
+Field names above match `schemas/mpi.schema.json`. The file has no header row — columns are positional.
 
 ## Performance Chart
 
