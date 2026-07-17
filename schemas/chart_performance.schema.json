@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/chart_performance.schema.json",
-  "$comment": "JSON Schema for the daily cumulative performance chart data file (au60etl93373_chart_performance.json).",
+  "$comment": "JSON Schema for the daily cumulative performance chart data file (au60etl93373_chart_performance_latest.json).",
   "title": "AU60ETL93373 Performance Chart Data",
-  "description": "JSON Schema for au60etl93373_chart_performance.json — daily cumulative performance data for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU) and its benchmark since inception. Updated each business day after NAV is published. All performance values are cumulative percentage returns since inception (inception date value = 0.0000). The benchmark is the E-mini S&P 500 Stock Price Index Futures Lead Month Contract; the active contract code (benchmark_symbol) changes on roll dates. The meta.high_water_mark_nav field is the highest NAV per unit recorded since inception and is used in the performance fee calculation. The file includes a schema_version field in meta.",
+  "description": "JSON Schema for au60etl93373_chart_performance_latest.json — daily cumulative performance data for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU) and its benchmark since inception. Updated each business day after NAV is published. All performance values are cumulative percentage returns since inception (inception date value = 0.0000). The benchmark is the E-mini S&P 500 Stock Price Index Futures Lead Month Contract; the active contract code (benchmark_symbol) changes on roll dates. The meta.high_water_mark_nav field is the highest NAV per unit recorded since inception and is used in the performance fee calculation. The file includes a schema_version field in meta.",
   "type": "object",
   "required": ["meta", "data"],
   "properties": {
