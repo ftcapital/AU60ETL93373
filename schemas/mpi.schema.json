@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/mpi.schema.json",
-  "$comment": "Data dictionary for the daily MPI (open futures positions) CSV file (ftc_ftus_mpi_latest.csv).",
+  "$comment": "Data dictionary for the daily MPI (open futures positions) CSV file (au60etl93373_mpi_latest.csv).",
   "title": "AU60ETL93373 MPI — Open Futures Positions",
-  "description": "Data dictionary for ftc_ftus_mpi_latest.csv — the daily Material Portfolio Information file for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373). Each row represents one open futures position held by the fund at close of the trading day. The file has no header row; fields are positional and comma-delimited. The fund trades E-mini S&P 500 (ES) and Micro E-mini S&P 500 (MES) futures on CME. Contract codes follow the convention: root + month code (H=Mar, M=Jun, U=Sep, Z=Dec) + year digit(s). The file contains only the latest day's positions; historical position data is not published.",
+  "description": "Data dictionary for au60etl93373_mpi_latest.csv — the daily Material Portfolio Information file for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373). Each row represents one open futures position held by the fund at close of the trading day. The file has no header row; fields are positional and comma-delimited. The fund trades E-mini S&P 500 (ES) and Micro E-mini S&P 500 (MES) futures on CME. Contract codes follow the convention: root + month code (H=Mar, M=Jun, U=Sep, Z=Dec) + year digit(s). The file contains only the latest day's positions; historical position data is not published.",
   "type": "object",
   "properties": {
     "format": {
