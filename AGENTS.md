@@ -34,8 +34,8 @@ Open futures positions as at valuation date.
 
 - Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_mpi_latest.csv
 - Updated: daily (Australia/Sydney time)
-- Columns: date (YYYYMMDD), bloomberg (ticker), side (BUY/SELL net), quantity (contracts),
-  venue (exchange), product_name, product_code (Globex symbol)
+- Columns (no header row, positional; names below match schemas/mpi.schema.json): date (YYYYMMDD),
+  bloomberg_ticker, side (BUY/SELL net), contracts, exchange, description, contract_code (Globex symbol)
 
 ### au60etl93373_chart_performance_latest.json
 
@@ -87,6 +87,18 @@ on each date and handles rolls automatically.
 | APIR     | ETL9337AU      |
 | ARSN     | 652 933 616    |
 | Bloomberg | FTUSLCE AU \<Equity> |
+| Currency | AUD |
+
+## Service Providers
+
+| Role | Entity |
+|------|--------|
+| Responsible Entity | Equity Trustees Limited |
+| Fund Manager | Future Trading Capital Pty Limited |
+| Administrator & Custodian | Apex Fund Services Pty Ltd |
+
+NAV per unit is calculated independently by the Administrator (Apex Fund Services), not by the
+Fund Manager (Future Trading Capital Pty Limited).
 
 ## Terminology
 
@@ -127,6 +139,26 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/chart_performance.schema.json (performance chart data)
 
 The settlement audit file is AsciiDoc, not JSON, and has no schema.
+
+## Verifying the Settlement Audit File
+
+Before treating `au60etl93373_audit_settlement_public_latest.adoc` as unmodified in transit, check it
+against its `.sha256` sidecar:
+
+1. Fetch both raw files:
+   `au60etl93373_audit_settlement_public_latest.adoc` and
+   `au60etl93373_audit_settlement_public_latest.adoc.sha256`
+2. Compute the SHA-256 digest of the `.adoc` file's exact byte content (no re-encoding, no
+   trailing-newline normalization — hash exactly what was fetched).
+3. The `.sha256` file's first whitespace-delimited field is the expected digest, e.g.:
+   `55981a43254c63ce0d099df486abc51583cf3345acad850545ea1d5edf87ee48  au60etl93373_audit_settlement_public_latest.adoc`
+4. Compare (case-insensitive hex compare). If they match, the two files were transferred together
+   intact. If they don't match, do not present the audit content as reliable — report:
+   "The settlement audit file failed integrity verification against its sha256 sidecar."
+
+This only detects mismatch between the two files as fetched — see the Integrity note above: both
+files are generated and published by the same process, so this does not protect against tampering
+by anyone with publish access to this repository.
 
 ## MCP Interface (Planned)
 
