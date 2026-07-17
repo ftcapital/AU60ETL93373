@@ -1,8 +1,8 @@
-= FTUS Daily Settlement Audit — 2026-07-13
+= FTUS Daily Settlement Audit -- 2026-07-15
 FT Capital Pty Limited
-2026-07-13
-:description: Settlement audit record for FTUS 2026-07-13
-== Run 1: 2026-07-14T14:02:45 — COMPLETE
+2026-07-15
+:description: Settlement audit record for FTUS 2026-07-15
+== Run 2: 2026-07-17T02:15:25 -- PARTIAL — user exit
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|Settlement date |2026-07-13
+|Settlement date |2026-07-15
 |CME settlement day |Yes
-|AUD/USD NY1700 (BFIX NY1700) |0.6918
-|AUD/USD LN1600 (WMR LN1600) |0.6933
+|AUD/USD NY1700 (BFIX NY1700) |0.6998
+|AUD/USD LN1600 (WMR LN1600) |0.7004
 |Fund / Class |FTUS / FTUS
 |===
 
@@ -23,16 +23,15 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |AUD/USD NY1700 0.6918 (BFIX NY1700) |OK
-|2 |AUD/USD LN1600 0.6933 (WMR LN1600) |OK
-|7 |Benchmark ES1 ESU6 = 7563 |OK
-|11 |MPI report |OK
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
+|1 |AUD/USD NY1700 0.6998 (BFIX NY1700) |OK
+|2 |AUD/USD LN1600 0.7004 (WMR LN1600) |OK
+|7 |Benchmark ES1 ESU6 = 7577.75 |Skipped
+|11 |MPI report |Not run
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
 |===
 
 === Output
 
-* ftc_ftus_mpi_20260713.csv — published to https://github.com/ftcapital/AU60ETL93373
+* ftc_ftus_mpi_20260715.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-07-14T14:02:45_
-
+_Generated: 2026-07-17T02:15:25_
