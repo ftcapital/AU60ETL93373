@@ -5,8 +5,12 @@
   "title": "AU60ETL93373 NAV Report (ISO 20022 reda.001)",
   "description": "JSON Schema for au60etl93373_reda001_latest.json — the daily NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU). The file is structured per ISO 20022 Price Report message type reda.001. It is updated each business day after NAV is published by the administrator (Apex Fund Services). Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price). All amounts are in AUD. The pricChng field in valtnSttstcs is a decimal fraction, not a percentage (e.g. -0.0038 = -0.38%).",
   "type": "object",
-  "required": ["msgId", "pricValtnDtls"],
+  "required": ["msgId", "pricValtnDtls", "schema_version"],
   "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version string."
+    },
     "msgId": {
       "type": "object",
       "required": ["creDtTm", "id"],
