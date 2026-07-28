@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-07-03
+= FTUS NAV Approval Audit -- 2026-07-06
 FT Capital Pty Limited
-2026-07-03
-:description: NAV approval workflow audit record for FTUS 2026-07-03 (public)
-== Run 1: 2026-07-28T08:26:00 -- FAILED at step 11
+2026-07-06
+:description: NAV approval workflow audit record for FTUS 2026-07-06 (public)
+== Run 1: 2026-07-28T12:31:36 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-07-03
+|NAV date |2026-07-06
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -24,9 +24,9 @@ FT Capital Pty Limited
 
 |1 |Import Apex NAV email |OK
 |2 |Approve NAV |OK
-|3 |Send approval email to Apex |Failed
-|4 |Export BDUP (FTUSLCE) |Failed
-|5 |Export Lipper price file |Failed
+|3 |Send approval email to Apex |OK
+|4 |Export BDUP (FTUSLCE) |OK
+|5 |Export Lipper price file |OK
 |6 |Morningstar price feed [placeholder] |OK
 |7 |Export Reda001 |OK
 |8 |Publish Reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
@@ -35,4 +35,4 @@ FT Capital Pty Limited
 |11 |Generate chart image (not published) |OK
 |===
 
-_Generated: 2026-07-28T08:26:00_
+_Generated: 2026-07-28T12:31:36_
