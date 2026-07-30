@@ -7,6 +7,7 @@ NAV price data for FT Capital Multi Class Investment Fund - US Large Cap Enhance
 | Type | Value |
 |------|-------|
 | ISIN | AU60ETL93373 |
+| FIGI | BBG022MMSXM3 |
 | APIR | ETL9337AU |
 | ARSN | 652 933 616 |
 | Bloomberg | FTUSLCE AU \<Equity> |
