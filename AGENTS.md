@@ -98,6 +98,7 @@ on each date and handles rolls automatically.
 | Type     | Value          |
 |----------|----------------|
 | ISIN     | AU60ETL93373   |
+| FIGI     | BBG022MMSXM3   |
 | APIR     | ETL9337AU      |
 | ARSN     | 652 933 616    |
 | Bloomberg | FTUSLCE AU \<Equity> |
