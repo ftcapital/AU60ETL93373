@@ -19,14 +19,24 @@ For regulatory interpretation (fees, risks, investor eligibility), refer to:
 
 ## Files
 
-### au60etl93373_reda001_latest.json
+### au60etl93373_reda001_latest.json — RETIRED, 2026-08-03
 
-NAV data in ISO 20022 reda.001 (Price Report) format.
+No longer updated. Use `au60etl93373_iso20022_reda001_latest.json` instead. The value at
+this URL stays at its last published date, for historical reference only.
 
 - Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_reda001_latest.json
+
+### au60etl93373_iso20022_reda001_latest.json
+
+NAV data in ISO 20022 reda.001.001.05 (Price Report) format, checked field-by-field
+against the published message definition, not just styled after it.
+
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_iso20022_reda001_latest.json
 - Updated: daily (Australia/Sydney time)
-- Key fields: navDtTm (valuation date), NAVL (NAV per unit), OFFR (entry price),
-  BIDE (exit price), ttlNAV (total NAV in AUD)
+- Key fields, under `Document.PricRpt.PricValtnDtls[0]`: `NAVDtTm.Dt` (valuation date),
+  `PricDtls[]` keyed by `PricTp.Cd` (`NAVL` = NAV per unit, `OFFR` = entry price,
+  `BIDE` = exit price, each under `ValInInvstmtCcy[0].Amt.value`), `TtlNAV[0].value`
+  (total NAV in AUD)
 
 ### au60etl93373_mpi_latest.csv
 
@@ -101,6 +111,7 @@ on each date and handles rolls automatically.
 | FIGI     | BBG022MMSXM3   |
 | APIR     | ETL9337AU      |
 | ARSN     | 652 933 616    |
+| LEI      | 254900X0N2K4O4JH2510 |
 | Bloomberg | FTUSLCE AU \<Equity> |
 | Currency | AUD |
 
@@ -149,7 +160,8 @@ Do not estimate values. Do not use stale or cached values unless explicitly requ
 ## Schemas
 
 JSON Schema definitions are published for all JSON data files:
-- schemas/reda001.schema.json (NAV data)
+- schemas/iso20022_reda001.schema.json (NAV data)
+- schemas/reda001.schema.json (retired, 2026-08-03, for the retired file above)
 - schemas/mpi.schema.json (open futures positions)
 - schemas/chart_performance.schema.json (performance chart data)
 
