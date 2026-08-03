@@ -10,6 +10,7 @@ NAV price data for FT Capital Multi Class Investment Fund - US Large Cap Enhance
 | FIGI | BBG022MMSXM3 |
 | APIR | ETL9337AU |
 | ARSN | 652 933 616 |
+| LEI | 254900X0N2K4O4JH2510 |
 | Bloomberg | FTUSLCE AU \<Equity> |
 | Currency | AUD |
 
@@ -23,29 +24,39 @@ NAV price data for FT Capital Multi Class Investment Fund - US Large Cap Enhance
 
 ## Data Format
 
-NAV data is published in ISO 20022 `reda.001` (Price Report) format.
+NAV data is published in ISO 20022 `reda.001.001.05` (Price Report) format, checked
+field-by-field against the published message definition.
 
-**File:** `au60etl93373_reda001_latest.json`
+**File:** `au60etl93373_iso20022_reda001_latest.json`
+
+**Retired, 2026-08-03:** `au60etl93373_reda001_latest.json`. That file used ISO 20022
+field names and price-type codes without the real message structure. It is no longer
+updated. The value at that URL stays at its last published date, for historical
+reference only.
 
 ### Structure
 
 ```
-PriceReport (reda.001)
-├── msgId
-│   ├── id (message identifier)
-│   └── creDtTm (creation timestamp)
-└── pricValtnDtls
-    ├── navDtTm (valuation date)
-    ├── finInstrmDtls.isin
-    ├── ttlNAV (total NAV amount + currency)
-    ├── pricDtls[]
-    │   ├── NAVL (NAV per unit)
-    │   ├── OFFR (entry/offer price)
-    │   └── BIDE (exit/bid price)
-    └── valtnSttstcs
-        ├── hghstPricVal12Mnths
-        ├── lwstPricVal12Mnths
-        └── byUsrDfndTmPrd[] (rolling returns)
+Document
+└── PricRpt (reda.001.001.05, PriceReportV05)
+    ├── MsgId
+    │   ├── Id (message identifier)
+    │   └── CreDtTm (creation timestamp)
+    ├── MsgPgntn, PricRptId, Fctn
+    └── PricValtnDtls[]
+        ├── NAVDtTm.Dt (valuation date)
+        ├── FinInstrmDtls.Id[].ISIN
+        ├── TtlNAV[] (total NAV amount + currency)
+        ├── ValtnTp, OffclValtnInd, SspdInd
+        ├── PricDtls[]
+        │   ├── PricTp.Cd = NAVL — ValInInvstmtCcy[].Amt (NAV per unit)
+        │   ├── PricTp.Cd = OFFR — ValInInvstmtCcy[].Amt (entry/offer price)
+        │   └── PricTp.Cd = BIDE — ValInInvstmtCcy[].Amt (exit/bid price)
+        │   (each entry also carries ForExctnInd, CumDvddInd, EstmtdPricInd)
+        └── ValtnSttstcs[]
+            ├── Ccy, PricTpChngBsis, PricChng (Amt, AmtSgn, Rate)
+            ├── ByPrdfndTmPrds.HghstPricVal12Mnths / LwstPricVal12Mnths
+            └── ByUsrDfndTmPrd[] (rolling returns, Prd.Dt.FrDt/ToDt + PricChng)
 ```
 
 ## MPI Report
@@ -118,7 +129,7 @@ Always reflects only the most recently completed run, not a historical log — i
 Fetch the latest NAV data:
 
 ```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_reda001_latest.json
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_iso20022_reda001_latest.json
 ```
 
 Fetch the latest MPI data:
