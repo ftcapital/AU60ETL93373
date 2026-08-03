@@ -3,13 +3,26 @@
   "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/iso20022_reda001.schema.json",
   "$comment": "JSON Schema for the structurally valid ISO 20022 NAV price report file (au60etl93373_iso20022_reda001_latest.json).",
   "title": "AU60ETL93373 NAV Report, structurally valid ISO 20022 reda.001.001.05",
-  "description": "JSON Schema for au60etl93373_iso20022_reda001_latest.json, a second NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU), published alongside au60etl93373_reda001_latest.json, not a replacement for it. Structured to match the real ISO 20022 reda.001.001.05 (PriceReport) message definition field-by-field, checked directly against the published XSD, unlike the older file. Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price), real ISO 20022 TypeOfPrice9Code values. Amounts with a currency are represented as either {\"value\": <number>, \"Ccy\": <string>} (where the XSD element itself carries the currency) or {\"Amt\": {\"value\": <number>, \"Ccy\": <string>}} (where the XSD element wraps an amount field named Amt) -- this JSON attribute convention is this document's own choice, since ISO 20022 defines no official JSON mapping in the raw XSD.",
+  "description": "JSON Schema for au60etl93373_iso20022_reda001_latest.json, the NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU). Replaces au60etl93373_reda001_latest.json, retired 2026-08-03. Structured to match the real ISO 20022 reda.001.001.05 (PriceReport) message definition field-by-field, checked directly against the published XSD, unlike the retired file. Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price), real ISO 20022 TypeOfPrice9Code values. Amounts with a currency are represented as either {\"value\": <number>, \"Ccy\": <string>} (where the XSD element itself carries the currency) or {\"Amt\": {\"value\": <number>, \"Ccy\": <string>}} (where the XSD element wraps an amount field named Amt) -- this JSON attribute convention is this document's own choice, since ISO 20022 defines no official JSON mapping in the raw XSD. generatedAt, version, and authoritative are siblings of Document, added 2026-08-03 at the ftcapital.com.au web team's request -- not part of the ISO 20022 standard, since PriceReportV05 is a closed structure with no room for extra fields inside it.",
   "type": "object",
-  "required": ["Document", "schema_version"],
+  "required": ["Document", "schema_version", "generatedAt", "version", "authoritative"],
   "properties": {
     "schema_version": {
       "type": "string",
       "description": "Schema version string for this document shape."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Real wall-clock generation time, ISO 8601 UTC. Distinct from Document.PricRpt.MsgId.CreDtTm, which is always midnight UTC on the NAV date, not a true generation timestamp."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of this document's own shape. Fixed at \"1.0.0\", matching schema_version. Not a per-publish revision counter."
+    },
+    "authoritative": {
+      "type": "boolean",
+      "description": "Always true. This platform is the Level 1 authoritative source for NAV data, per AGENTS.md's own Authority section."
     },
     "Document": {
       "type": "object",
