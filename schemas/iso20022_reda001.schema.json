@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/iso20022_reda001.schema.json",
+  "$comment": "JSON Schema for the structurally valid ISO 20022 NAV price report file (au60etl93373_iso20022_reda001_latest.json).",
+  "title": "AU60ETL93373 NAV Report, structurally valid ISO 20022 reda.001.001.05",
+  "description": "JSON Schema for au60etl93373_iso20022_reda001_latest.json, a second NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU), published alongside au60etl93373_reda001_latest.json, not a replacement for it. Structured to match the real ISO 20022 reda.001.001.05 (PriceReport) message definition field-by-field, checked directly against the published XSD, unlike the older file. Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price), real ISO 20022 TypeOfPrice9Code values. Amounts with a currency are represented as either {\"value\": <number>, \"Ccy\": <string>} (where the XSD element itself carries the currency) or {\"Amt\": {\"value\": <number>, \"Ccy\": <string>}} (where the XSD element wraps an amount field named Amt) -- this JSON attribute convention is this document's own choice, since ISO 20022 defines no official JSON mapping in the raw XSD.",
+  "type": "object",
+  "required": ["Document", "schema_version"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version string for this document shape."
+    },
+    "Document": {
+      "type": "object",
+      "required": ["PricRpt"],
+      "properties": {
+        "PricRpt": {
+          "type": "object",
+          "description": "PriceReportV05. The real ISO 20022 root element for this message type.",
+          "required": ["MsgId", "MsgPgntn", "PricRptId", "Fctn", "PricValtnDtls"],
+          "properties": {
+            "MsgId": {
+              "type": "object",
+              "required": ["Id", "CreDtTm"],
+              "properties": {
+                "Id": { "type": "string", "description": "Message identifier, <ISIN>-<YYYYMMDD>." },
+                "CreDtTm": { "type": "string", "format": "date-time", "description": "Message creation datetime, ISO 8601 UTC." }
+              }
+            },
+            "MsgPgntn": {
+              "type": "object",
+              "required": ["PgNb", "LastPgInd"],
+              "properties": {
+                "PgNb": { "type": "string", "description": "Page number. Always \"1\" -- this document is never paginated." },
+                "LastPgInd": { "type": "boolean", "description": "Always true, for the same reason." }
+              }
+            },
+            "PricRptId": { "type": "string", "description": "Report identifier. Same value as MsgId.Id." },
+            "Fctn": {
+              "type": "string",
+              "enum": ["REPL", "NEWP", "PART"],
+              "description": "Always NEWP in this document. REPL/PART are not tracked at this report layer."
+            },
+            "PricValtnDtls": {
+              "type": "array",
+              "minItems": 1,
+              "description": "One element for each valued financial instrument. Always exactly 1 element here, one class per report.",
+              "items": {
+                "type": "object",
+                "required": ["NAVDtTm", "FinInstrmDtls", "ValtnTp", "OffclValtnInd", "SspdInd"],
+                "properties": {
+                  "NAVDtTm": {
+                    "type": "object",
+                    "required": ["Dt"],
+                    "properties": {
+                      "Dt": { "type": "string", "format": "date", "description": "NAV valuation date." }
+                    }
+                  },
+                  "FinInstrmDtls": {
+                    "type": "object",
+                    "required": ["Id", "DualFndInd"],
+                    "properties": {
+                      "Id": {
+                        "type": "array",
+                        "minItems": 1,
+                        "description": "Instrument identifiers. Always exactly one ISIN entry here.",
+                        "items": {
+                          "type": "object",
+                          "required": ["ISIN"],
+                          "properties": {
+                            "ISIN": { "type": "string", "const": "AU60ETL93373" }
+                          }
+                        }
+                      },
+                      "Nm": { "type": "string", "description": "Fund and class name." },
+                      "DualFndInd": { "type": "boolean", "description": "Always false. This is not a dual fund." }
+                    }
+                  },
+                  "TtlNAV": {
+                    "type": "array",
+                    "description": "Total NAV of the fund class.",
+                    "items": {
+                      "type": "object",
+                      "required": ["value", "Ccy"],
+                      "properties": {
+                        "value": { "type": "number" },
+                        "Ccy": { "type": "string", "const": "AUD" }
+                      }
+                    }
+                  },
+                  "ValtnTp": {
+                    "type": "string",
+                    "enum": ["EXCP", "USUA", "PATC"],
+                    "description": "Always USUA. Daily valuations are the usual case here."
+                  },
+                  "ValtnFrqcy": { "type": "string", "description": "Always DAIL." },
+                  "OffclValtnInd": { "type": "boolean", "description": "Always true. Apex is the fund's administrator of record." },
+                  "SspdInd": { "type": "boolean", "description": "Always false. No suspension state exists in this schema." },
+                  "PricDtls": {
+                    "type": "array",
+                    "description": "Always exactly 3 elements: NAVL, OFFR, BIDE.",
+                    "items": {
+                      "type": "object",
+                      "required": ["PricTp", "ValInInvstmtCcy", "ForExctnInd", "CumDvddInd", "EstmtdPricInd"],
+                      "properties": {
+                        "PricTp": {
+                          "type": "object",
+                          "required": ["Cd"],
+                          "properties": {
+                            "Cd": { "type": "string", "enum": ["NAVL", "OFFR", "BIDE"] }
+                          }
+                        },
+                        "ValInInvstmtCcy": {
+                          "type": "array",
+                          "minItems": 1,
+                          "items": {
+                            "type": "object",
+                            "required": ["Amt"],
+                            "properties": {
+                              "Amt": {
+                                "type": "object",
+                                "required": ["value", "Ccy"],
+                                "properties": {
+                                  "value": { "type": "number" },
+                                  "Ccy": { "type": "string", "const": "AUD" }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "ForExctnInd": { "type": "boolean", "description": "True for OFFR/BIDE, real dealing prices. False for NAVL, a reference price." },
+                        "CumDvddInd": { "type": "boolean", "description": "Always false. No cum-dividend tracking exists." },
+                        "EstmtdPricInd": { "type": "boolean", "description": "Always false. Apex's own figure is treated as final." }
+                      }
+                    }
+                  },
+                  "ValtnSttstcs": {
+                    "type": "array",
+                    "description": "Always exactly 1 element.",
+                    "items": {
+                      "type": "object",
+                      "required": ["Ccy", "PricTpChngBsis", "PricChng"],
+                      "properties": {
+                        "Ccy": { "type": "string", "const": "AUD" },
+                        "PricTpChngBsis": {
+                          "type": "object",
+                          "required": ["Strd"],
+                          "properties": {
+                            "Strd": { "type": "string", "enum": ["NAVL", "OFFR", "BIDE"], "description": "Always NAVL. The headline change is computed on NAV per unit." }
+                          }
+                        },
+                        "PricChng": { "$ref": "#/definitions/priceValueChange" },
+                        "ByPrdfndTmPrds": {
+                          "type": "object",
+                          "properties": {
+                            "HghstPricVal12Mnths": { "$ref": "#/definitions/priceValue" },
+                            "LwstPricVal12Mnths": { "$ref": "#/definitions/priceValue" }
+                          }
+                        },
+                        "ByUsrDfndTmPrd": {
+                          "type": "array",
+                          "description": "One element for each requested rolling period, currently 30 and 90 days.",
+                          "items": {
+                            "type": "object",
+                            "required": ["Prd", "PricChng"],
+                            "properties": {
+                              "Prd": {
+                                "type": "object",
+                                "required": ["Dt"],
+                                "properties": {
+                                  "Dt": {
+                                    "type": "object",
+                                    "required": ["FrDt", "ToDt"],
+                                    "properties": {
+                                      "FrDt": { "type": "string", "format": "date" },
+                                      "ToDt": { "type": "string", "format": "date" }
+                                    }
+                                  }
+                                }
+                              },
+                              "PricChng": { "$ref": "#/definitions/priceValueChange" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "priceValue": {
+      "type": "object",
+      "required": ["Amt"],
+      "properties": {
+        "Amt": {
+          "type": "object",
+          "required": ["value", "Ccy"],
+          "properties": {
+            "value": { "type": "number" },
+            "Ccy": { "type": "string", "const": "AUD" }
+          }
+        }
+      }
+    },
+    "priceValueChange": {
+      "type": "object",
+      "required": ["Amt", "AmtSgn", "Rate"],
+      "properties": {
+        "Amt": { "type": "number", "description": "Absolute value of the change. Sign is carried separately in AmtSgn." },
+        "AmtSgn": { "type": "boolean", "description": "True when the change is negative. Not confirmed against XSD element documentation -- the raw XSD carries none." },
+        "Rate": { "type": "number", "description": "Change as a decimal fraction, e.g. -0.0071 = -0.71%." }
+      }
+    }
+  }
+}
