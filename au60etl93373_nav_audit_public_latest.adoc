@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-07-30
+= FTUS NAV Approval Audit -- 2026-07-31
 FT Capital Pty Limited
-2026-07-30
-:description: NAV approval workflow audit record for FTUS 2026-07-30 (public)
-== Run 1: 2026-08-01T08:07:26 -- COMPLETE
+2026-07-31
+:description: NAV approval workflow audit record for FTUS 2026-07-31 (public)
+== Run 1: 2026-08-03T07:56:54 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-07-30
+|NAV date |2026-07-31
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -33,6 +33,7 @@ FT Capital Pty Limited
 |9 |Export performance data |OK
 |10 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
 |11 |Generate chart image (not published) |OK
+|12 |Export + publish ISO 20022 reda001 (parallel, additive) |OK
 |===
 
-_Generated: 2026-08-01T08:07:26_
+_Generated: 2026-08-03T07:56:54_
