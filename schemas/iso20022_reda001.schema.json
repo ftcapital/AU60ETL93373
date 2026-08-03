@@ -3,9 +3,15 @@
   "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/iso20022_reda001.schema.json",
   "$comment": "JSON Schema for the structurally valid ISO 20022 NAV price report file (au60etl93373_iso20022_reda001_latest.json).",
   "title": "AU60ETL93373 NAV Report, structurally valid ISO 20022 reda.001.001.05",
-  "description": "JSON Schema for au60etl93373_iso20022_reda001_latest.json, the NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU). Replaces au60etl93373_reda001_latest.json, retired 2026-08-03. Structured to match the real ISO 20022 reda.001.001.05 (PriceReport) message definition field-by-field, checked directly against the published XSD, unlike the retired file. Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price), real ISO 20022 TypeOfPrice9Code values. Amounts with a currency are represented as either {\"value\": <number>, \"Ccy\": <string>} (where the XSD element itself carries the currency) or {\"Amt\": {\"value\": <number>, \"Ccy\": <string>}} (where the XSD element wraps an amount field named Amt) -- this JSON attribute convention is this document's own choice, since ISO 20022 defines no official JSON mapping in the raw XSD. generatedAt, version, and authoritative are siblings of Document, added 2026-08-03 at the ftcapital.com.au web team's request -- not part of the ISO 20022 standard, since PriceReportV05 is a closed structure with no room for extra fields inside it.",
+  "description": "JSON Schema for au60etl93373_iso20022_reda001_latest.json, the NAV price report for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU). Replaces au60etl93373_reda001_latest.json, retired 2026-08-03. Structured to match the real ISO 20022 reda.001.001.05 (PriceReport) message definition field-by-field, checked directly against the published XSD, unlike the retired file. Price types: NAVL (NAV per unit), OFFR (offer/entry price), BIDE (bid/exit price), real ISO 20022 TypeOfPrice9Code values. Amounts with a currency are represented as either {\"value\": <number>, \"Ccy\": <string>} (where the XSD element itself carries the currency) or {\"Amt\": {\"value\": <number>, \"Ccy\": <string>}} (where the XSD element wraps an amount field named Amt) -- this JSON attribute convention is this document's own choice, since ISO 20022 defines no official JSON mapping in the raw XSD. generatedAt, version, and authoritative are siblings of Document, added 2026-08-03 at the ftcapital.com.au web team's request -- not part of the ISO 20022 standard, since PriceReportV05 is a closed structure with no room for extra fields inside it. FIGI (BBG022MMSXM3) added 2026-08-03, also at the ftcapital.com.au web team's request, as a second FinInstrmDtls.Id entry using the real OthrPrtryId choice member (AlternateSecurityIdentification7), confirmed against the XSD directly. Unlike the LEI, FIGI has a valid slot inside this ISO 20022 message.",
   "type": "object",
-  "required": ["Document", "schema_version", "generatedAt", "version", "authoritative"],
+  "required": [
+    "Document",
+    "schema_version",
+    "generatedAt",
+    "version",
+    "authoritative"
+  ],
   "properties": {
     "schema_version": {
       "type": "string",
@@ -26,33 +32,67 @@
     },
     "Document": {
       "type": "object",
-      "required": ["PricRpt"],
+      "required": [
+        "PricRpt"
+      ],
       "properties": {
         "PricRpt": {
           "type": "object",
           "description": "PriceReportV05. The real ISO 20022 root element for this message type.",
-          "required": ["MsgId", "MsgPgntn", "PricRptId", "Fctn", "PricValtnDtls"],
+          "required": [
+            "MsgId",
+            "MsgPgntn",
+            "PricRptId",
+            "Fctn",
+            "PricValtnDtls"
+          ],
           "properties": {
             "MsgId": {
               "type": "object",
-              "required": ["Id", "CreDtTm"],
+              "required": [
+                "Id",
+                "CreDtTm"
+              ],
               "properties": {
-                "Id": { "type": "string", "description": "Message identifier, <ISIN>-<YYYYMMDD>." },
-                "CreDtTm": { "type": "string", "format": "date-time", "description": "Message creation datetime, ISO 8601 UTC." }
+                "Id": {
+                  "type": "string",
+                  "description": "Message identifier, <ISIN>-<YYYYMMDD>."
+                },
+                "CreDtTm": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Message creation datetime, ISO 8601 UTC."
+                }
               }
             },
             "MsgPgntn": {
               "type": "object",
-              "required": ["PgNb", "LastPgInd"],
+              "required": [
+                "PgNb",
+                "LastPgInd"
+              ],
               "properties": {
-                "PgNb": { "type": "string", "description": "Page number. Always \"1\" -- this document is never paginated." },
-                "LastPgInd": { "type": "boolean", "description": "Always true, for the same reason." }
+                "PgNb": {
+                  "type": "string",
+                  "description": "Page number. Always \"1\" -- this document is never paginated."
+                },
+                "LastPgInd": {
+                  "type": "boolean",
+                  "description": "Always true, for the same reason."
+                }
               }
             },
-            "PricRptId": { "type": "string", "description": "Report identifier. Same value as MsgId.Id." },
+            "PricRptId": {
+              "type": "string",
+              "description": "Report identifier. Same value as MsgId.Id."
+            },
             "Fctn": {
               "type": "string",
-              "enum": ["REPL", "NEWP", "PART"],
+              "enum": [
+                "REPL",
+                "NEWP",
+                "PART"
+              ],
               "description": "Always NEWP in this document. REPL/PART are not tracked at this report layer."
             },
             "PricValtnDtls": {
@@ -61,33 +101,97 @@
               "description": "One element for each valued financial instrument. Always exactly 1 element here, one class per report.",
               "items": {
                 "type": "object",
-                "required": ["NAVDtTm", "FinInstrmDtls", "ValtnTp", "OffclValtnInd", "SspdInd"],
+                "required": [
+                  "NAVDtTm",
+                  "FinInstrmDtls",
+                  "ValtnTp",
+                  "OffclValtnInd",
+                  "SspdInd"
+                ],
                 "properties": {
                   "NAVDtTm": {
                     "type": "object",
-                    "required": ["Dt"],
+                    "required": [
+                      "Dt"
+                    ],
                     "properties": {
-                      "Dt": { "type": "string", "format": "date", "description": "NAV valuation date." }
+                      "Dt": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "NAV valuation date."
+                      }
                     }
                   },
                   "FinInstrmDtls": {
                     "type": "object",
-                    "required": ["Id", "DualFndInd"],
+                    "required": [
+                      "Id",
+                      "DualFndInd"
+                    ],
                     "properties": {
                       "Id": {
                         "type": "array",
                         "minItems": 1,
-                        "description": "Instrument identifiers. Always exactly one ISIN entry here.",
+                        "maxItems": 2,
+                        "description": "Instrument identifiers. Always one ISIN entry. A second OthrPrtryId entry for FIGI is present only when the class has a FIGI recorded (fondihaldus.mis_class_figi), omitted otherwise.",
                         "items": {
                           "type": "object",
-                          "required": ["ISIN"],
-                          "properties": {
-                            "ISIN": { "type": "string", "const": "AU60ETL93373" }
-                          }
+                          "oneOf": [
+                            {
+                              "required": [
+                                "ISIN"
+                              ],
+                              "properties": {
+                                "ISIN": {
+                                  "type": "string",
+                                  "const": "AU60ETL93373"
+                                }
+                              }
+                            },
+                            {
+                              "required": [
+                                "OthrPrtryId"
+                              ],
+                              "properties": {
+                                "OthrPrtryId": {
+                                  "type": "object",
+                                  "required": [
+                                    "Id",
+                                    "IdSrc"
+                                  ],
+                                  "properties": {
+                                    "Id": {
+                                      "type": "string",
+                                      "const": "BBG022MMSXM3",
+                                      "description": "The FIGI value."
+                                    },
+                                    "IdSrc": {
+                                      "type": "object",
+                                      "required": [
+                                        "Prtry"
+                                      ],
+                                      "properties": {
+                                        "Prtry": {
+                                          "type": "string",
+                                          "const": "FIGI"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
                         }
                       },
-                      "Nm": { "type": "string", "description": "Fund and class name." },
-                      "DualFndInd": { "type": "boolean", "description": "Always false. This is not a dual fund." }
+                      "Nm": {
+                        "type": "string",
+                        "description": "Fund and class name."
+                      },
+                      "DualFndInd": {
+                        "type": "boolean",
+                        "description": "Always false. This is not a dual fund."
+                      }
                     }
                   },
                   "TtlNAV": {
@@ -95,33 +199,69 @@
                     "description": "Total NAV of the fund class.",
                     "items": {
                       "type": "object",
-                      "required": ["value", "Ccy"],
+                      "required": [
+                        "value",
+                        "Ccy"
+                      ],
                       "properties": {
-                        "value": { "type": "number" },
-                        "Ccy": { "type": "string", "const": "AUD" }
+                        "value": {
+                          "type": "number"
+                        },
+                        "Ccy": {
+                          "type": "string",
+                          "const": "AUD"
+                        }
                       }
                     }
                   },
                   "ValtnTp": {
                     "type": "string",
-                    "enum": ["EXCP", "USUA", "PATC"],
+                    "enum": [
+                      "EXCP",
+                      "USUA",
+                      "PATC"
+                    ],
                     "description": "Always USUA. Daily valuations are the usual case here."
                   },
-                  "ValtnFrqcy": { "type": "string", "description": "Always DAIL." },
-                  "OffclValtnInd": { "type": "boolean", "description": "Always true. Apex is the fund's administrator of record." },
-                  "SspdInd": { "type": "boolean", "description": "Always false. No suspension state exists in this schema." },
+                  "ValtnFrqcy": {
+                    "type": "string",
+                    "description": "Always DAIL."
+                  },
+                  "OffclValtnInd": {
+                    "type": "boolean",
+                    "description": "Always true. Apex is the fund's administrator of record."
+                  },
+                  "SspdInd": {
+                    "type": "boolean",
+                    "description": "Always false. No suspension state exists in this schema."
+                  },
                   "PricDtls": {
                     "type": "array",
                     "description": "Always exactly 3 elements: NAVL, OFFR, BIDE.",
                     "items": {
                       "type": "object",
-                      "required": ["PricTp", "ValInInvstmtCcy", "ForExctnInd", "CumDvddInd", "EstmtdPricInd"],
+                      "required": [
+                        "PricTp",
+                        "ValInInvstmtCcy",
+                        "ForExctnInd",
+                        "CumDvddInd",
+                        "EstmtdPricInd"
+                      ],
                       "properties": {
                         "PricTp": {
                           "type": "object",
-                          "required": ["Cd"],
+                          "required": [
+                            "Cd"
+                          ],
                           "properties": {
-                            "Cd": { "type": "string", "enum": ["NAVL", "OFFR", "BIDE"] }
+                            "Cd": {
+                              "type": "string",
+                              "enum": [
+                                "NAVL",
+                                "OFFR",
+                                "BIDE"
+                              ]
+                            }
                           }
                         },
                         "ValInInvstmtCcy": {
@@ -129,22 +269,41 @@
                           "minItems": 1,
                           "items": {
                             "type": "object",
-                            "required": ["Amt"],
+                            "required": [
+                              "Amt"
+                            ],
                             "properties": {
                               "Amt": {
                                 "type": "object",
-                                "required": ["value", "Ccy"],
+                                "required": [
+                                  "value",
+                                  "Ccy"
+                                ],
                                 "properties": {
-                                  "value": { "type": "number" },
-                                  "Ccy": { "type": "string", "const": "AUD" }
+                                  "value": {
+                                    "type": "number"
+                                  },
+                                  "Ccy": {
+                                    "type": "string",
+                                    "const": "AUD"
+                                  }
                                 }
                               }
                             }
                           }
                         },
-                        "ForExctnInd": { "type": "boolean", "description": "True for OFFR/BIDE, real dealing prices. False for NAVL, a reference price." },
-                        "CumDvddInd": { "type": "boolean", "description": "Always false. No cum-dividend tracking exists." },
-                        "EstmtdPricInd": { "type": "boolean", "description": "Always false. Apex's own figure is treated as final." }
+                        "ForExctnInd": {
+                          "type": "boolean",
+                          "description": "True for OFFR/BIDE, real dealing prices. False for NAVL, a reference price."
+                        },
+                        "CumDvddInd": {
+                          "type": "boolean",
+                          "description": "Always false. No cum-dividend tracking exists."
+                        },
+                        "EstmtdPricInd": {
+                          "type": "boolean",
+                          "description": "Always false. Apex's own figure is treated as final."
+                        }
                       }
                     }
                   },
@@ -153,22 +312,45 @@
                     "description": "Always exactly 1 element.",
                     "items": {
                       "type": "object",
-                      "required": ["Ccy", "PricTpChngBsis", "PricChng"],
+                      "required": [
+                        "Ccy",
+                        "PricTpChngBsis",
+                        "PricChng"
+                      ],
                       "properties": {
-                        "Ccy": { "type": "string", "const": "AUD" },
+                        "Ccy": {
+                          "type": "string",
+                          "const": "AUD"
+                        },
                         "PricTpChngBsis": {
                           "type": "object",
-                          "required": ["Strd"],
+                          "required": [
+                            "Strd"
+                          ],
                           "properties": {
-                            "Strd": { "type": "string", "enum": ["NAVL", "OFFR", "BIDE"], "description": "Always NAVL. The headline change is computed on NAV per unit." }
+                            "Strd": {
+                              "type": "string",
+                              "enum": [
+                                "NAVL",
+                                "OFFR",
+                                "BIDE"
+                              ],
+                              "description": "Always NAVL. The headline change is computed on NAV per unit."
+                            }
                           }
                         },
-                        "PricChng": { "$ref": "#/definitions/priceValueChange" },
+                        "PricChng": {
+                          "$ref": "#/definitions/priceValueChange"
+                        },
                         "ByPrdfndTmPrds": {
                           "type": "object",
                           "properties": {
-                            "HghstPricVal12Mnths": { "$ref": "#/definitions/priceValue" },
-                            "LwstPricVal12Mnths": { "$ref": "#/definitions/priceValue" }
+                            "HghstPricVal12Mnths": {
+                              "$ref": "#/definitions/priceValue"
+                            },
+                            "LwstPricVal12Mnths": {
+                              "$ref": "#/definitions/priceValue"
+                            }
                           }
                         },
                         "ByUsrDfndTmPrd": {
@@ -176,23 +358,39 @@
                           "description": "One element for each requested rolling period, currently 30 and 90 days.",
                           "items": {
                             "type": "object",
-                            "required": ["Prd", "PricChng"],
+                            "required": [
+                              "Prd",
+                              "PricChng"
+                            ],
                             "properties": {
                               "Prd": {
                                 "type": "object",
-                                "required": ["Dt"],
+                                "required": [
+                                  "Dt"
+                                ],
                                 "properties": {
                                   "Dt": {
                                     "type": "object",
-                                    "required": ["FrDt", "ToDt"],
+                                    "required": [
+                                      "FrDt",
+                                      "ToDt"
+                                    ],
                                     "properties": {
-                                      "FrDt": { "type": "string", "format": "date" },
-                                      "ToDt": { "type": "string", "format": "date" }
+                                      "FrDt": {
+                                        "type": "string",
+                                        "format": "date"
+                                      },
+                                      "ToDt": {
+                                        "type": "string",
+                                        "format": "date"
+                                      }
                                     }
                                   }
                                 }
                               },
-                              "PricChng": { "$ref": "#/definitions/priceValueChange" }
+                              "PricChng": {
+                                "$ref": "#/definitions/priceValueChange"
+                              }
                             }
                           }
                         }
@@ -210,25 +408,48 @@
   "definitions": {
     "priceValue": {
       "type": "object",
-      "required": ["Amt"],
+      "required": [
+        "Amt"
+      ],
       "properties": {
         "Amt": {
           "type": "object",
-          "required": ["value", "Ccy"],
+          "required": [
+            "value",
+            "Ccy"
+          ],
           "properties": {
-            "value": { "type": "number" },
-            "Ccy": { "type": "string", "const": "AUD" }
+            "value": {
+              "type": "number"
+            },
+            "Ccy": {
+              "type": "string",
+              "const": "AUD"
+            }
           }
         }
       }
     },
     "priceValueChange": {
       "type": "object",
-      "required": ["Amt", "AmtSgn", "Rate"],
+      "required": [
+        "Amt",
+        "AmtSgn",
+        "Rate"
+      ],
       "properties": {
-        "Amt": { "type": "number", "description": "Absolute value of the change. Sign is carried separately in AmtSgn." },
-        "AmtSgn": { "type": "boolean", "description": "True when the change is negative. Not confirmed against XSD element documentation -- the raw XSD carries none." },
-        "Rate": { "type": "number", "description": "Change as a decimal fraction, e.g. -0.0071 = -0.71%." }
+        "Amt": {
+          "type": "number",
+          "description": "Absolute value of the change. Sign is carried separately in AmtSgn."
+        },
+        "AmtSgn": {
+          "type": "boolean",
+          "description": "True when the change is negative. Not confirmed against XSD element documentation -- the raw XSD carries none."
+        },
+        "Rate": {
+          "type": "number",
+          "description": "Change as a decimal fraction, e.g. -0.0071 = -0.71%."
+        }
       }
     }
   }
