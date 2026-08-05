@@ -58,6 +58,20 @@ Cumulative performance data from inception, rebased to 0% on capital deployment 
 - Data block: daily percent returns keyed by date (YYYY-MM-DD), with benchmark_symbol
   per date (handles futures contract rolls automatically)
 
+### au60etl93373_nav_history_latest.json
+
+Full daily NAV history from inception. Not ISO 20022, there is no ISO 20022 message
+type for a raw historical series. Recomputed in full on every publish, not appended
+to, so the file always stays internally consistent.
+
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_history_latest.json
+- Updated: daily (Australia/Sydney time)
+- Meta block: fund, class, class_code, isin, apir, figi (present only when the class
+  has a FIGI on file), currency, earliest_date, latest_date, count, generated,
+  schema_version
+- Data block: one entry for each valuation date, keyed by date (YYYY-MM-DD), each
+  entry gives nav_unit_price, entry_price, exit_price, total_nav, units_on_issue
+
 ### au60etl93373_nav_audit_public_latest.adoc
 
 Redacted public record of the daily NAV approval workflow (Apex NAV import, approval, BDUP/Lipper/Morningstar exports, Reda001 and performance data publish) for the most recently completed run — a process/audit record, not fund valuation data. Not covered by the Authority section above.
@@ -164,6 +178,7 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/reda001.schema.json (retired, 2026-08-03, for the retired file above)
 - schemas/mpi.schema.json (open futures positions)
 - schemas/chart_performance.schema.json (performance chart data)
+- schemas/nav_history.schema.json (full daily NAV history)
 
 Both the NAV approval audit and settlement audit files are AsciiDoc, not JSON, and have no schema.
 
