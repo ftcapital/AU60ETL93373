@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/nav_history.schema.json",
+  "$comment": "JSON Schema for the full daily NAV history file (au60etl93373_nav_history_latest.json).",
+  "title": "AU60ETL93373 NAV History",
+  "description": "JSON Schema for au60etl93373_nav_history_latest.json, the full daily NAV history for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU), from inception. Not ISO 20022, there is no ISO 20022 message type for a raw historical NAV series. Recomputed in full on every publish, not appended to, so the file is always internally consistent with no partial-history risk.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["fund", "class", "class_code", "isin", "apir", "currency", "earliest_date", "latest_date", "count", "generated", "schema_version"],
+      "properties": {
+        "fund": { "type": "string", "description": "Fund name." },
+        "class": { "type": "string", "description": "Class name." },
+        "class_code": { "type": "string", "const": "FTUS", "description": "Internal class code." },
+        "isin": { "type": "string", "const": "AU60ETL93373" },
+        "apir": { "type": "string", "const": "ETL9337AU" },
+        "figi": { "type": "string", "const": "BBG022MMSXM3", "description": "Omitted, not null, when the class has no FIGI recorded." },
+        "currency": { "type": "string", "const": "AUD" },
+        "earliest_date": { "type": "string", "format": "date", "description": "The first date in the data block." },
+        "latest_date": { "type": "string", "format": "date", "description": "The last date in the data block." },
+        "count": { "type": "integer", "description": "Number of dates in the data block. Matches the number of keys in data." },
+        "generated": { "type": "string", "format": "date-time", "description": "Real generation timestamp, ISO 8601 UTC." },
+        "schema_version": { "type": "string" }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "One entry for each valuation date, keyed YYYY-MM-DD.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["nav_unit_price", "entry_price", "exit_price", "total_nav", "units_on_issue"],
+        "properties": {
+          "nav_unit_price": { "type": "number", "description": "NAV per unit for this date." },
+          "entry_price": { "type": "number", "description": "Entry (offer) price for this date." },
+          "exit_price": { "type": "number", "description": "Exit (bid) price for this date." },
+          "total_nav": { "type": "number", "description": "Total NAV of the fund class in AUD for this date." },
+          "units_on_issue": { "type": "number", "description": "Units on issue for this date." }
+        }
+      }
+    }
+  }
+}
