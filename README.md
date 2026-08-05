@@ -108,6 +108,39 @@ Percentage returns from inception, rebased to 0% on the capital deployment date.
 
 All `percent_*` values are percentage returns from `inception_date` (e.g. `5.45` = 5.45%). Alpha is `latest_percent_nav - latest_percent_benchmark`. The `meta` block is first for programmatic consumption — current return, HWM, and alpha are available without parsing `data`.
 
+## NAV History
+
+Full daily NAV history from inception. Not ISO 20022, no ISO 20022 message type
+exists for a raw historical series. Recomputed in full on every publish, not
+appended to, so the file always stays internally consistent.
+
+**File:** `au60etl93373_nav_history_latest.json`
+
+### Structure
+
+```
+{
+  "meta": {
+    "fund", "class", "class_code", "isin", "apir", "figi",
+    "currency", "earliest_date", "latest_date", "count",
+    "generated", "schema_version"
+  },
+  "data": {
+    "YYYY-MM-DD": {
+      "nav_unit_price",   // NAV per unit
+      "entry_price",      // entry (offer) price
+      "exit_price",       // exit (bid) price
+      "total_nav",        // total NAV of the fund class in AUD
+      "units_on_issue"
+    }
+  }
+}
+```
+
+`figi` in `meta` is present only when the class has a FIGI on file. `count` matches
+the number of keys in `data`. `data` has one entry for each valuation date from
+`earliest_date` to `latest_date`.
+
 ## NAV Approval Audit
 
 Redacted public record of the daily NAV approval workflow — import, approval, and publish steps (Apex NAV import, approval, BDUP/Lipper exports, Reda001 and performance data publish) for the most recently completed run. Not fund valuation data; a process/audit record.
