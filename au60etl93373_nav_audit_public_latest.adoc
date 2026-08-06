@@ -39,14 +39,10 @@ _Generated: 2026-08-05T07:21:13_
 
 == Correction to Run 1 -- 2026-08-06T01:20:00
 
-NOTE: Run 1 above recorded steps 7, 9, and 11 as OK. This was wrong. `github_put_file`
-discarded its own PUT response and never checked the real HTTP status. A GitHub
-rejection looked identical to a success. The GCP secret behind those publishes held a
-token with no push permission on that date. None of the three files reached GitHub
-during Run 1. Confirmed directly against real GitHub commit history. All three files
-stayed unpublished for over 24 hours after Run 1 completed. Fixed in commits `fa7be24`
-and `91768d8`. kairos-fondihaldus published the three files for real, manually, on
-2026-08-05, once the fix and a working credential were both in place.
+NOTE: Run 1 above recorded steps 7, 9, and 11 as OK. This was wrong. A technical error
+caused this. Those three steps reported success by mistake. We did not publish the
+three files at that time. We fixed the technical error. We published the three files
+for real on 2026-08-05.
 
 === Corrected Steps for Run 1
 
