@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-08-03
+= FTUS NAV Approval Audit -- 2026-08-04
 FT Capital Pty Limited
-2026-08-03
-:description: NAV approval workflow audit record for FTUS 2026-08-03 (public)
-== Run 1: 2026-08-04T05:56:18 -- COMPLETE
+2026-08-04
+:description: NAV approval workflow audit record for FTUS 2026-08-04 (public)
+== Run 1: 2026-08-05T07:21:13 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-08-03
+|NAV date |2026-08-04
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -28,10 +28,33 @@ FT Capital Pty Limited
 |4 |Export BDUP (FTUSLCE) |OK
 |5 |Export Lipper price file |OK
 |6 |Morningstar price feed [placeholder] |OK
-|7 |Export + publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
+|7 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
 |8 |Export performance data |OK
 |9 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
 |10 |Generate chart image (not published) |OK
+|11 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
 |===
 
-_Generated: 2026-08-04T05:56:18_
+_Generated: 2026-08-05T07:21:13_
+
+== Correction to Run 1 -- 2026-08-06T01:20:00
+
+NOTE: Run 1 above recorded steps 7, 9, and 11 as OK. This was wrong. `github_put_file`
+discarded its own PUT response and never checked the real HTTP status. A GitHub
+rejection looked identical to a success. The GCP secret behind those publishes held a
+token with no push permission on that date. None of the three files reached GitHub
+during Run 1. Confirmed directly against real GitHub commit history. All three files
+stayed unpublished for over 24 hours after Run 1 completed. Fixed in commits `fa7be24`
+and `91768d8`. kairos-fondihaldus published the three files for real, manually, on
+2026-08-05, once the fix and a working credential were both in place.
+
+=== Corrected Steps for Run 1
+
+[cols="1,3,1"]
+|===
+|Step |Description |Status
+
+|7 |Export and publish ISO 20022 reda001 |Failed
+|9 |Publish performance data |Failed
+|11 |Export and publish NAV history |Failed
+|===
