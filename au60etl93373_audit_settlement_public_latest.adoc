@@ -1,8 +1,8 @@
-= FTUS Daily Settlement Audit -- 2026-08-03
+= FTUS Daily Settlement Audit -- 2026-08-05
 FT Capital Pty Limited
-2026-08-03
-:description: Settlement audit record for FTUS 2026-08-03
-== Run 1: 2026-08-04T02:29:37 -- FAILED at step 14
+2026-08-05
+:description: Settlement audit record for FTUS 2026-08-05
+== Run 1: 2026-08-06T02:48:12 -- FAILED at step 5
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|Settlement date |2026-08-03
+|Settlement date |2026-08-05
 |CME settlement day |Yes
-|AUD/USD NY1700 (BFIX NY1700) |0.7001
-|AUD/USD LN1600 (WMR LN1600) |0.0.6997
+|AUD/USD NY1700 (BFIX NY1700) |0.7057
+|AUD/USD LN1600 (WMR LN1600) |0.7057
 |Fund / Class |FTUS / FTUS
 |===
 
@@ -23,24 +23,24 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |AUD/USD NY1700 0.7001 (BFIX NY1700) |OK
-|2 |AUD/USD LN1600 0.0.6997 (WMR LN1600) |Failed
+|1 |AUD/USD NY1700 0.7057 (BFIX NY1700) |OK
+|2 |AUD/USD LN1600 0.7057 (WMR LN1600) |OK
 |3 |FCM trade confirm report import |OK
 |4 |FCM cash report import |Failed
-|5 |FCM statement archive |OK
-|6 |Portfolio settlements |OK
-|7 |Benchmark ES1 ESU6 = 7628.25 |OK
-|8 |Generate portfolio trades report |OK
-|9 |Generate portfolio settlement report |OK
-|10 |Generate PCF report |OK
-|11 |Generate MPI report |OK
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
-|13 |Apex daily email sent |OK
-|14 |Send PCF to Solactive |OK
+|5 |FCM statement archive |Skipped
+|6 |Portfolio settlements |Not run
+|7 |Benchmark ES1 ESU6 = 7749.50 |Not run
+|8 |Generate portfolio trades report |Not run
+|9 |Generate portfolio settlement report |Not run
+|10 |Generate PCF report |Not run
+|11 |Generate MPI report |Not run
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
+|13 |Apex daily email sent |Not run
+|14 |Send PCF to Solactive |Not run
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-08-04T02:29:37_
+_Generated: 2026-08-06T02:48:12_
