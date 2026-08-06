@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-08-04
+= FTUS NAV Approval Audit -- 2026-08-05
 FT Capital Pty Limited
-2026-08-04
-:description: NAV approval workflow audit record for FTUS 2026-08-04 (public)
-== Run 1: 2026-08-05T07:21:13 -- COMPLETE
+2026-08-05
+:description: NAV approval workflow audit record for FTUS 2026-08-05 (public)
+== Run 1: 2026-08-06T05:51:15 -- FAILED at step 7
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-08-04
+|NAV date |2026-08-05
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -28,29 +28,11 @@ FT Capital Pty Limited
 |4 |Export BDUP (FTUSLCE) |OK
 |5 |Export Lipper price file |OK
 |6 |Morningstar price feed [placeholder] |OK
-|7 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
-|8 |Export performance data |OK
-|9 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
-|10 |Generate chart image (not published) |OK
-|11 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
+|7 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |Failed
+|8 |Export performance data |Not run
+|9 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |Not run
+|10 |Generate chart image (not published) |Not run
+|11 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |Not run
 |===
 
-_Generated: 2026-08-05T07:21:13_
-
-== Correction to Run 1 -- 2026-08-06T01:20:00
-
-NOTE: Run 1 above recorded steps 7, 9, and 11 as OK. This was wrong. A technical error
-caused this. Those three steps reported success by mistake. We did not publish the
-three files at that time. We fixed the technical error. We published the three files
-for real on 2026-08-05.
-
-=== Corrected Steps for Run 1
-
-[cols="1,3,1"]
-|===
-|Step |Description |Status
-
-|7 |Export and publish ISO 20022 reda001 |Failed
-|9 |Publish performance data |Failed
-|11 |Export and publish NAV history |Failed
-|===
+_Generated: 2026-08-06T05:51:15_
