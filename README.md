@@ -29,11 +29,6 @@ field-by-field against the published message definition.
 
 **File:** `au60etl93373_iso20022_reda001_latest.json`
 
-**Retired, 2026-08-03:** `au60etl93373_reda001_latest.json`. That file used ISO 20022
-field names and price-type codes without the real message structure. It is no longer
-updated. The value at that URL stays at its last published date, for historical
-reference only.
-
 ### Structure
 
 ```
