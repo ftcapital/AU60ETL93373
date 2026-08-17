@@ -19,13 +19,6 @@ For regulatory interpretation (fees, risks, investor eligibility), refer to:
 
 ## Files
 
-### au60etl93373_reda001_latest.json — RETIRED, 2026-08-03
-
-No longer updated. Use `au60etl93373_iso20022_reda001_latest.json` instead. The value at
-this URL stays at its last published date, for historical reference only.
-
-- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_reda001_latest.json
-
 ### au60etl93373_iso20022_reda001_latest.json
 
 NAV data in ISO 20022 reda.001.001.05 (Price Report) format, checked field-by-field
@@ -175,7 +168,6 @@ Do not estimate values. Do not use stale or cached values unless explicitly requ
 
 JSON Schema definitions are published for all JSON data files:
 - schemas/iso20022_reda001.schema.json (NAV data)
-- schemas/reda001.schema.json (retired, 2026-08-03, for the retired file above)
 - schemas/mpi.schema.json (open futures positions)
 - schemas/chart_performance.schema.json (performance chart data)
 - schemas/nav_history.schema.json (full daily NAV history)
