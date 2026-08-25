@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-08-21
+= FTUS NAV Approval Audit -- 2026-08-24
 FT Capital Pty Limited
-2026-08-21
-:description: NAV approval workflow audit record for FTUS 2026-08-21 (public)
-== Run 1: 2026-08-24T09:10:47 -- COMPLETE
+2026-08-24
+:description: NAV approval workflow audit record for FTUS 2026-08-24 (public)
+== Run 1: 2026-08-25T08:14:16 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-08-21
+|NAV date |2026-08-24
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -36,4 +36,4 @@ FT Capital Pty Limited
 |12 |RG240 monthly report [placeholder] |OK
 |===
 
-_Generated: 2026-08-24T09:10:47_
+_Generated: 2026-08-25T08:14:16_
