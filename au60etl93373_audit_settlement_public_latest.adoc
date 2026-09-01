@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-08-31
 :description: Settlement audit record for FTUS 2026-08-31
-== Run 2: 2026-09-01T03:27:50 -- FAILED at step 3
+== Run 3: 2026-09-01T03:43:23 -- COMPLETE
 
 === Parameters
 
@@ -25,22 +25,22 @@ FT Capital Pty Limited
 
 |1 |AUD/USD NY1700 0.7166 (BFIX NY1700) |OK
 |2 |AUD/USD LN1600 0.7167 (WMR LN1600) |OK
-|3 |FCM trade confirm report import |Failed
-|4 |FCM cash report import |Not run
-|5 |FCM statement archive |Not run
-|6 |Portfolio settlements |Not run
-|7 |Benchmark ES1 ESU6 = 7699 |Not run
-|8 |Generate portfolio trades report |Not run
-|9 |Generate portfolio settlement report |Not run
-|10 |Generate PCF report |Not run
-|11 |Generate MPI report |Not run
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
-|13 |Apex daily email sent |Not run
-|14 |Send PCF to Solactive |Not run
+|3 |FCM trade confirm report import |OK
+|4 |FCM cash report import |OK
+|5 |FCM statement archive |OK
+|6 |Portfolio settlements |OK
+|7 |Benchmark ES1 ESU6 = 7699 |OK
+|8 |Generate portfolio trades report |OK
+|9 |Generate portfolio settlement report |OK
+|10 |Generate PCF report |OK
+|11 |Generate MPI report |OK
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
+|13 |Apex daily email sent |OK
+|14 |Send PCF to Solactive |OK
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-01T03:27:50_
+_Generated: 2026-09-01T03:43:23_
