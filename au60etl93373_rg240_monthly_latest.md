@@ -3,7 +3,7 @@ schema: ftcapital.rg240.monthly
 schema_version: "1.0"
 document_id: AU60ETL93373-RG240-MONTHLY-2026-07
 reporting_date: 2026-07-31
-generated_at: 2026-09-02T15:25:15Z
+generated_at: 2026-09-02T15:25:32Z
 ---
 
 # FT Capital Multi Class Investment Fund
