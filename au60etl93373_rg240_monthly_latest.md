@@ -1,9 +1,9 @@
 ---
 schema: ftcapital.rg240.monthly
 schema_version: "1.0"
-document_id: AU60ETL93373-RG240-MONTHLY-2026-08
-reporting_date: 2026-08-31
-generated_at: 2026-09-02T14:32:12Z
+document_id: AU60ETL93373-RG240-MONTHLY-2026-04
+reporting_date: 2026-04-30
+generated_at: 2026-09-02T15:23:57Z
 ---
 
 # FT Capital Multi Class Investment Fund
@@ -13,20 +13,20 @@ generated_at: 2026-09-02T14:32:12Z
 
 | | |
 |---|---|
-| Reporting date | 31 August 2026 |
+| Reporting date | 30 April 2026 |
 | ISIN | AU60ETL93373 |
 | APIR | ETL9337AU |
 | FIGI | BBG022MMSXM3 |
 
 ## Net asset value
 
-**NAV:** $640,094.74 AUD (as at 31 August 2026)
+**NAV:** $211,928.57 AUD (as at 30 April 2026)
 
-**Redemption value per unit:** $1.1372 AUD
+**Redemption value per unit:** $1.0589 AUD
 
 ## Net return
 
-**Net return (31 Jul 2026 to 31 Aug 2026), after fees, costs and taxes:** 2.58%
+Net return is not available, no prior-period NAV is on file for 2026-03-31.
 
 ## Risk profile
 
@@ -42,4 +42,11 @@ No change in key investment decision-makers since the last report.
 
 ## Key service providers
 
-No change in key service providers since the last report.
+| Role | Entity | Status | Related party |
+|---|---|---|---|
+| Administrator | Apex Fund Services Pty Ltd | No prior record | No |
+| Custodian | Apex Fund Services Pty Ltd | No prior record | No |
+| Registry | Apex Fund Services Pty Ltd | No prior record | No |
+| Investment Manager | Future Trading Capital Pty Limited | No prior record | No |
+| Responsible Entity | Equity Trustees Limited | No prior record | No |
+| Auditor | Ernst & Young | No prior record | No |
