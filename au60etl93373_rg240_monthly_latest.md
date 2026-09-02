@@ -1,9 +1,9 @@
 ---
 schema: ftcapital.rg240.monthly
 schema_version: "1.0"
-document_id: AU60ETL93373-RG240-MONTHLY-2026-06
-reporting_date: 2026-06-30
-generated_at: 2026-09-02T13:58:26Z
+document_id: AU60ETL93373-RG240-MONTHLY-2026-04
+reporting_date: 2026-04-30
+generated_at: 2026-09-02T14:13:07Z
 ---
 
 # FT Capital Multi Class Investment Fund
@@ -13,20 +13,20 @@ generated_at: 2026-09-02T13:58:26Z
 
 | | |
 |---|---|
-| Reporting date | 30 June 2026 |
+| Reporting date | 30 April 2026 |
 | ISIN | AU60ETL93373 |
 | APIR | ETL9337AU |
 | FIGI | BBG022MMSXM3 |
 
 ## Net asset value
 
-**NAV:** $222,039.44 AUD (as at 30 June 2026)
+**NAV:** $211,928.57 AUD (as at 30 April 2026)
 
-**Redemption value per unit:** $1.1094 AUD
+**Redemption value per unit:** $1.0589 AUD
 
 ## Net return
 
-**Net return (31 May 2026 to 30 Jun 2026), after fees, costs and taxes:** -0.38%
+Net return is not available, no prior-period NAV is on file for 2026-03-31.
 
 ## Risk profile
 
