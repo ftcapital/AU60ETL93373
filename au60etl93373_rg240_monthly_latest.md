@@ -1,50 +1,52 @@
-# Monthly ASIC RG 240 Disclosure
+---
+schema: ftcapital.rg240.monthly
+schema_version: "1.0"
+document_id: AU60ETL93373-RG240-MONTHLY-2026-04
+reporting_date: 2026-04-30
+generated_at: 2026-09-02T13:49:00Z
+---
 
-**Reporting period (as at):** 2026-08-31
-**Generated:** 2026-09-02T08:49:04Z
+# FT Capital Multi Class Investment Fund
+## US Large Cap Enhanced Complex Class
 
-Fund: FT Capital Multi Class Investment Fund
-Class: US Large Cap Enhanced Complex Class
-ISIN: AU60ETL93373
-APIR: ETL9337AU
-FIGI: BBG022MMSXM3
+**RG 240 Benchmark 2 — Monthly Update**
 
-## Net Asset Value (RG 240.57)
-$640,094.74
+| | |
+|---|---|
+| Reporting date | 30 April 2026 |
+| ISIN | AU60ETL93373 |
+| APIR | ETL9337AU |
+| FIGI | BBG022MMSXM3 |
 
-## Redemption Value of a Unit (RG 240.57)
-1.1372
+## Net asset value
 
-## Net Return (since 2026-07-31) (RG 240.57)
-2.58%
+**NAV:** $211,928.57 AUD (as at 30 April 2026)
 
-## Key Service Providers (RG 240.57)
-- Administrator: Apex Fund Services Pty Ltd (no prior record for comparison)
-- Custodian: Apex Fund Services Pty Ltd (no prior record for comparison)
-- Registry: Apex Fund Services Pty Ltd (no prior record for comparison)
-- Investment Manager: Future Trading Capital Pty Limited (no prior record for comparison)
-- Responsible Entity: Equity Trustees Limited (no prior record for comparison)
-- Auditor: Ernst & Young (no prior record for comparison)
+**Redemption value per unit:** $1.0589 AUD
 
-## Risk Profile (RG 240.57)
+## Net return
+
+Net return is not available, no prior-period NAV is on file for 2026-03-31.
+
+## Risk profile
+
 No material change in risk profile since the last report.
 
-## Strategy (RG 240.57)
+## Strategy
+
 No material change in strategy since the last report.
 
-## Key Investment Decision-Makers (RG 240.57)
+## Key investment decision-makers
+
 No change in key investment decision-makers since the last report.
 
-## Asset Allocation (as at 2026-06-30) (RG 240.57, see RG 240.74(b))
-- Exchange Traded Derivatives: 0.61%
-- Cash Equivalent Investments: 99.39%
+## Key service providers
 
-## Liquidity Profile (RG 240.57)
-Listed derivative positions can be liquidated in less than two business days.
-
-## Leverage Ratio (RG 240.57, see RG 240.82-84)
-1.0552
-
-## Derivative Counterparties (RG 240.57)
-- Interactive Brokers Australia Pty Limited
-
+| Role | Entity | Status |
+|---|---|---|
+| Administrator | Apex Fund Services Pty Ltd | No prior record |
+| Custodian | Apex Fund Services Pty Ltd | No prior record |
+| Registry | Apex Fund Services Pty Ltd | No prior record |
+| Investment Manager | Future Trading Capital Pty Limited | No prior record |
+| Responsible Entity | Equity Trustees Limited | No prior record |
+| Auditor | Ernst & Young | No prior record |
