@@ -94,6 +94,37 @@ valuation data. Not covered by the Authority section above.
   corruption in transit but is not independent verification against tampering by anyone
   with publish access to this repository
 
+### au60etl93373_rg240_monthly_latest.md
+
+Monthly RG 240 disclosure update (ASIC Regulatory Guide 240, Benchmark 2) — a process/investor
+disclosure record, not fund valuation data. Not covered by the Authority section above.
+
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_rg240_monthly_latest.md
+- Updated: monthly, published manually (not a fixed automated schedule)
+- Format: Markdown, with a YAML frontmatter block (`schema`, `schema_version`, `document_id`,
+  `reporting_date`, `generated_at`)
+- Covers: net asset value, redemption value per unit, net return, risk profile, strategy, key
+  investment decision-makers, and key service providers (shown only when changed since the last
+  report)
+- Reflects only the most recently published month — overwritten on each publish, not a historical
+  log. This file's own commit history on GitHub preserves each prior month's content.
+
+### au60etl93373_rg240_annual_<YYYYMMDD>.md
+
+Annual RG 240 disclosure report (ASIC Regulatory Guide 240, Benchmark 2), one file for each real
+financial year end (30 June) — a process/investor disclosure record, not fund valuation data. Not
+covered by the Authority section above.
+
+- Current file: `au60etl93373_rg240_annual_20260630.md`
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_rg240_annual_20260630.md
+- Updated: once for each real financial year end, published manually
+- Format: Markdown, with a YAML frontmatter block (`schema`, `schema_version`, `document_id`,
+  `reporting_date`, `generated_at`)
+- Covers: asset allocation, liquidity profile, liability maturity profile, gross leverage ratio,
+  derivative counterparties, investment returns since inception, and key service providers
+- A separate file for each financial year end — never overwritten. Check this repository's own
+  file listing for the most recent `<YYYYMMDD>`.
+
 ## Data Refresh
 
 - Frequency: daily following NAV approval
@@ -129,6 +160,11 @@ on each date and handles rolls automatically.
 | Responsible Entity | Equity Trustees Limited |
 | Fund Manager | Future Trading Capital Pty Limited |
 | Administrator & Custodian | Apex Fund Services Pty Ltd |
+| Auditor | Ernst & Young |
+
+Auditor sourced from the RG 240 annual report, year ended 30 June 2026 (see
+`au60etl93373_rg240_annual_20260630.md` above), not independently confirmed elsewhere in this
+repository.
 
 NAV per unit is calculated independently by the Administrator (Apex Fund Services), not by the
 Fund Manager (Future Trading Capital Pty Limited).
