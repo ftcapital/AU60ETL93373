@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-09-14
 :description: Settlement audit record for FTUS 2026-09-14
-== Run 6: 2026-09-15T04:49:30 -- FAILED at step 8
+== Run 7: 2026-09-15T05:01:26 -- FAILED at step 13
 
 === Parameters
 
@@ -30,12 +30,12 @@ FT Capital Pty Limited
 |5 |FCM statement archive |OK
 |6 |Portfolio settlements |OK
 |7 |Benchmark ES1 ESZ6 = 7692.75 |OK
-|8 |Generate portfolio trades report |Failed
-|9 |Generate portfolio settlement report |Not run
-|10 |Generate PCF report |Not run
-|11 |Generate MPI report |Not run
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
-|13 |Apex daily email sent |Not run
+|8 |Generate portfolio trades report |OK
+|9 |Generate portfolio settlement report |OK
+|10 |Generate PCF report |OK
+|11 |Generate MPI report |OK
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
+|13 |Apex daily email sent |Failed
 |14 |Send PCF to Solactive |Not run
 |15 |Daily leverage and position summary |Not run
 |16 |Metrics email sent |Not run
@@ -45,4 +45,4 @@ FT Capital Pty Limited
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-15T04:49:30_
+_Generated: 2026-09-15T05:01:26_
