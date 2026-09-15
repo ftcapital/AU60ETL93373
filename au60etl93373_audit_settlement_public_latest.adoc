@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-09-14
 :description: Settlement audit record for FTUS 2026-09-14
-== Run 5: 2026-09-15T04:41:47 -- FAILED at step 8
+== Run 6: 2026-09-15T04:49:30 -- FAILED at step 8
 
 === Parameters
 
@@ -45,4 +45,4 @@ FT Capital Pty Limited
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-15T04:41:47_
+_Generated: 2026-09-15T04:49:30_
