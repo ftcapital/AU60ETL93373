@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-09-14
 :description: Settlement audit record for FTUS 2026-09-14
-== Run 2: 2026-09-15T03:53:36 -- COMPLETE
+== Run 3: 2026-09-15T04:10:51 -- FAILED at step 8
 
 === Parameters
 
@@ -29,8 +29,8 @@ FT Capital Pty Limited
 |4 |FCM interest report import |OK
 |5 |FCM statement archive |OK
 |6 |Portfolio settlements |OK
-|7 |Benchmark ES1 ESZ6 = 7692.75 |Not run
-|8 |Generate portfolio trades report |Not run
+|7 |Benchmark ES1 ESZ6 = 7692.75 |OK
+|8 |Generate portfolio trades report |Failed
 |9 |Generate portfolio settlement report |Not run
 |10 |Generate PCF report |Not run
 |11 |Generate MPI report |Not run
@@ -45,4 +45,4 @@ FT Capital Pty Limited
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-15T03:53:36_
+_Generated: 2026-09-15T04:10:51_
