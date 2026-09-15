@@ -1,8 +1,8 @@
-= FTUS Daily Settlement Audit -- 2026-09-11
+= FTUS Daily Settlement Audit -- 2026-09-14
 FT Capital Pty Limited
-2026-09-11
-:description: Settlement audit record for FTUS 2026-09-11
-== Run 1: 2026-09-12T03:46:52 -- COMPLETE
+2026-09-14
+:description: Settlement audit record for FTUS 2026-09-14
+== Run 1: 2026-09-15T02:57:07 -- FAILED at step 3
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|Settlement date |2026-09-11
+|Settlement date |2026-09-14
 |CME settlement day |Yes
-|AUD/USD NY1700 (BFIX NY1700) |0.7171
-|AUD/USD LN1600 (WMR LN1600) |0.7173
+|AUD/USD NY1700 (BFIX NY1700) |0.7140
+|AUD/USD LN1600 (WMR LN1600) |0.7122
 |Fund / Class |FTUS / FTUS
 |===
 
@@ -23,26 +23,26 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |AUD/USD NY1700 0.7171 (BFIX NY1700) |OK
-|2 |AUD/USD LN1600 0.7173 (WMR LN1600) |OK
-|3 |FCM trade confirm report import |OK
-|4 |FCM cash report import |OK
-|5 |FCM statement archive |OK
-|6 |Portfolio settlements |OK
-|7 |Benchmark ES1 ESU6 = 7659.50 |OK
-|8 |Generate portfolio trades report |OK
-|9 |Generate portfolio settlement report |OK
-|10 |Generate PCF report |OK
-|11 |Generate MPI report |OK
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
-|13 |Apex daily email sent |OK
-|14 |Send PCF to Solactive |OK
-|15 |Daily leverage and position summary |OK
-|16 |Metrics email sent |OK
+|1 |AUD/USD NY1700 0.7140 (BFIX NY1700) |OK
+|2 |AUD/USD LN1600 0.7122 (WMR LN1600) |OK
+|3 |FCM trade confirm report import |Failed
+|4 |FCM interest report import |Not run
+|5 |FCM statement archive |Not run
+|6 |Portfolio settlements |Not run
+|7 |Benchmark ES1 ESZ6 = 7692.75 |Not run
+|8 |Generate portfolio trades report |Not run
+|9 |Generate portfolio settlement report |Not run
+|10 |Generate PCF report |Not run
+|11 |Generate MPI report |Not run
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
+|13 |Apex daily email sent |Not run
+|14 |Send PCF to Solactive |Not run
+|15 |Daily leverage and position summary |Not run
+|16 |Metrics email sent |Not run
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-12T03:46:52_
+_Generated: 2026-09-15T02:57:07_
