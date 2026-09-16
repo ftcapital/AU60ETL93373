@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-09-15
+= FTUS NAV Approval Audit -- 2026-09-14
 FT Capital Pty Limited
-2026-09-15
-:description: NAV approval workflow audit record for FTUS 2026-09-15 (public)
-== Run 1: 2026-09-16T07:13:48 -- COMPLETE
+2026-09-14
+:description: NAV approval workflow audit record for FTUS 2026-09-14 (public)
+== Run 3: 2026-09-16T07:34:05 -- PARTIAL — user exit
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-09-15
+|NAV date |2026-09-14
 |Class |FTUS
-|Chart rebase date |2026-04-09
-|ISIN |AU60ETL93373
+|Chart rebase date |2026-09-14
+|ISIN |(none)
 |===
 
 === Steps
@@ -24,16 +24,16 @@ FT Capital Pty Limited
 
 |1 |Import Apex NAV email |OK
 |2 |Fetch and save Apex Performance Fee file |OK
-|3 |Approve NAV |OK
-|4 |Send approval email to Apex |OK
-|5 |Export BDUP (FTUSLCE) |OK
-|6 |Export Lipper price file |OK
-|7 |Morningstar price feed [placeholder] |OK
-|8 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
-|9 |Export performance data |OK
-|10 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
-|11 |Generate chart image (not published) |OK
-|12 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
+|3 |Approve NAV |Skipped
+|4 |Send approval email to Apex |Not run
+|5 |Export BDUP (FTUSLCE) |Not run
+|6 |Export Lipper price file |Not run
+|7 |Morningstar price feed [placeholder] |Not run
+|8 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |Not run
+|9 |Export performance data |Not run
+|10 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |Not run
+|11 |Generate chart image (not published) |Not run
+|12 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |Not run
 |===
 
-_Generated: 2026-09-16T07:13:48_
+_Generated: 2026-09-16T07:34:05_
