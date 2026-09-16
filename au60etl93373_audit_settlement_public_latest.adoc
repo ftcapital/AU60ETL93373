@@ -1,8 +1,8 @@
-= FTUS Daily Settlement Audit -- 2026-09-14
+= FTUS Daily Settlement Audit -- 2026-09-15
 FT Capital Pty Limited
-2026-09-14
-:description: Settlement audit record for FTUS 2026-09-14
-== Run 11: 2026-09-15T05:59:46 -- COMPLETE
+2026-09-15
+:description: Settlement audit record for FTUS 2026-09-15
+== Run 1: 2026-09-16T02:51:36 -- FAILED at step 7
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|Settlement date |2026-09-14
+|Settlement date |2026-09-15
 |CME settlement day |Yes
-|AUD/USD NY1700 (BFIX NY1700) |0.7140
-|AUD/USD LN1600 (WMR LN1600) |0.7122
+|AUD/USD NY1700 (BFIX NY1700) |0.7131
+|AUD/USD LN1600 (WMR LN1600) |0.7130
 |Fund / Class |FTUS / FTUS
 |===
 
@@ -23,26 +23,26 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |AUD/USD NY1700 0.7140 (BFIX NY1700) |OK
-|2 |AUD/USD LN1600 0.7122 (WMR LN1600) |OK
+|1 |AUD/USD NY1700 0.7131 (BFIX NY1700) |OK
+|2 |AUD/USD LN1600 0.7130 (WMR LN1600) |OK
 |3 |FCM trade confirm report import |OK
 |4 |FCM interest report import |OK
 |5 |FCM statement archive |OK
 |6 |Portfolio settlements |OK
-|7 |Benchmark ES1 ESZ6 = 7692.75 |OK
-|8 |Generate portfolio trades report |OK
-|9 |Generate portfolio settlement report |OK
-|10 |Generate PCF report |OK
-|11 |Generate MPI report |OK
-|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
-|13 |Apex daily email sent |OK
-|14 |Send PCF to Solactive |OK
-|15 |Daily leverage and position summary |OK
-|16 |Metrics email sent |OK
+|7 |Benchmark ES1 ESZ6 = 7656 |Failed
+|8 |Generate portfolio trades report |Not run
+|9 |Generate portfolio settlement report |Not run
+|10 |Generate PCF report |Not run
+|11 |Generate MPI report |Not run
+|12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |Not run
+|13 |Apex daily email sent |Not run
+|14 |Send PCF to Solactive |Not run
+|15 |Daily leverage and position summary |Not run
+|16 |Metrics email sent |Not run
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-09-15T05:59:46_
+_Generated: 2026-09-16T02:51:36_
