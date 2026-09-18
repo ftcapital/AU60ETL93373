@@ -14,6 +14,7 @@ FT Capital Pty Limited
 |CME settlement day |Yes
 |AUD/USD NY1700 (BFIX NY1700) |0.7110
 |AUD/USD LN1600 (WMR LN1600) |0.7113
+|Benchmark |ES1 ESZ6 = 7707.25
 |Fund / Class |FTUS / FTUS
 |===
 
