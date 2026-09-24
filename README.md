@@ -140,10 +140,12 @@ appended to, so the file always stays internally consistent.
 the number of keys in `data`. `data` has one entry for each valuation date from
 `earliest_date` to `latest_date`.
 
-## Fund at a Glance
+## OpenFunds Summary
 
-Static fund and share class facts, keyed by real [OpenFunds](https://openfunds.org) OF-ID. Not fund
-valuation data; a process/reference record.
+Every real fund and share class fact this fund publishes, keyed by real [OpenFunds](https://openfunds.org)
+OF-ID. Pulled live from the database on every publish -- no hand-maintained value, so a change to
+a service provider, a fee rate, or an identifier reaches this file automatically the next time it
+publishes, with nothing for a person to remember to update by hand.
 
 **File:** `au60etl93373_openfunds_latest.json`
 
@@ -158,38 +160,20 @@ valuation data; a process/reference record.
     "generated", "schema_version"
   },
   "data": {
-    "<OF-ID>": <value>   // one entry for each confirmed field
-  }
-}
-```
-
-Only fields with a real OpenFunds OF-ID appear in `data`. ARSN and APIR have no OpenFunds
-equivalent as of catalog version 2.13.0 (checked field-by-field against the full catalog, not
-assumed absent) and stay published only in the Identifiers table above.
-
-Updated manually, when a static fund fact changes (fee rate, service provider, identifier) — not a
-fixed daily schedule, unlike the NAV/MPI/performance files above.
-
-## OpenFunds Daily Summary
-
-The two [OpenFunds](https://openfunds.org) Dynamic Data fields that change with every new
-valuation date -- AuM Share Class and NoS Share Class. Same real single source of truth as the
-NAV History file's own `total_nav`/`units_on_issue` fields, a single-row OpenFunds-tagged view of
-it, not a second query path. Kept separate from the static Fund at a Glance file above, whose
-fields do not change daily.
-
-**File:** `au60etl93373_openfunds_daily_latest.json`
-
-### Structure
-
-```
-{
-  "meta": {
-    "fund", "class", "isin",
-    "standard", "standard_version",
-    "generated", "schema_version"
-  },
-  "data": {
+    "OFST010020",  // Legal Fund Name Including Umbrella
+    "OFST010030",  // LEI Of Fund (present only when on file)
+    "OFST001300",  // Fund Administrator Name (present only when on file)
+    "OFST001400",  // Custodian Bank Name (present only when on file)
+    "OFST001430",  // Trustee Name (present only when on file)
+    "OFST001520",  // Legal Adviser Name (present only when on file)
+    "OFST001600",  // Auditor Name (present only when on file)
+    "OFST020000",  // ISIN
+    "OFST020540",  // Share Class Currency
+    "OFST020025",  // FIGI Code (present only when on file)
+    "OFST020020",  // Bloomberg Code (present only when on file)
+    "OFST451027",  // Has Performance Fee (present only when a rate is on file)
+    "OFST451028",  // Performance Fee Applied (present only when on file)
+    "OFST452000",  // Management Fee Applied (present only when on file)
     "OFDY000070",  // AuM Share Class
     "OFDY000071",  // AuM Share Class Date
     "OFDY000075",  // NoS Share Class
@@ -198,7 +182,14 @@ fields do not change daily.
 }
 ```
 
-Fund-level equivalents exist in the OpenFunds standard (`OFDY000060`/`OFDY000065`) but are not
+Only fields with a real OpenFunds OF-ID appear in `data`, each present only when a real row backs
+it -- an absent optional fact is the absence of a key, never a JSON `null`. Fund Group Name
+(`OFST001000`) and Fund Domicile (`OFST010010`/`OFST010011`) are deliberately absent -- no column
+backs either one in the database, and hardcoding either here would reintroduce the exact staleness
+risk this file exists to remove, one level down. ARSN, APIR, and the Buy/Sell Spread have no
+OpenFunds equivalent as of catalog version 2.13.0 (checked field-by-field against the full
+catalog, not assumed absent) and stay published only in the Identifiers table above. Fund-level
+AuM/NoS equivalents exist in the OpenFunds standard (`OFDY000060`/`OFDY000065`) but are not
 published here -- FTUSLCE is a single-class fund, so the fund-level figure is always identical to
 the share-class figure.
 
@@ -263,16 +254,10 @@ https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_a
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_audit_public_latest.adoc.sha256
 ```
 
-Fetch the latest fund at a glance data:
+Fetch the latest OpenFunds summary data:
 
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
-```
-
-Fetch the latest OpenFunds daily summary data:
-
-```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_daily_latest.json
 ```
 
 Fetch the latest settlement audit record (and verify it against its sha256):

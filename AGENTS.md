@@ -67,34 +67,32 @@ to, so the file always stays internally consistent.
 
 ### au60etl93373_openfunds_latest.json
 
-Static fund and share class facts, keyed by real OpenFunds OF-ID (https://openfunds.org) — a
-process/reference record, not fund valuation data. Not covered by the Authority section above.
+Every real OpenFunds field this fund publishes, static and daily alike, keyed by real OpenFunds
+OF-ID (https://openfunds.org) — a process/reference record, not fund valuation data in the sense
+of the Authority section above, though the AuM/NoS fields below overlap with the NAV history
+file's own real figures. Pulled live from the database on every publish — no hand-maintained
+value, so a change to a service provider, a fee rate, or an identifier reaches this file
+automatically the next time it is published, with nothing for a person to remember to update by
+hand.
 
 - Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
-- Updated: manually, when a static fund fact changes (fee rate, service provider, identifier) —
-  not a fixed daily schedule
+- Updated: daily (Australia/Sydney time), same publish step as the NAV history file
 - Meta block: fund, class, isin, standard (`openfunds`), standard_version (the OpenFunds catalog
   version the OF-IDs below were checked against), generated, schema_version
-- Data block: real OpenFunds OF-ID keys only. ARSN and APIR have no OpenFunds equivalent in
-  standard version 2.13.0 — checked field-by-field against the full 745-page catalog, not assumed
-  absent — and stay published only in the Identifiers table above, not in this file.
-
-### au60etl93373_openfunds_daily_latest.json
-
-The two OpenFunds Dynamic Data fields that change with every new valuation date --
-AuM Share Class and NoS Share Class, keyed by real OpenFunds OF-ID (https://openfunds.org).
-Same real single source of truth as au60etl93373_nav_history_latest.json's own total_nav/
-units_on_issue fields, a single-row OpenFunds-tagged view of it, not a second query path.
-Kept separate from au60etl93373_openfunds_latest.json (static fund/share-class facts that
-do not change daily).
-
-- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_daily_latest.json
-- Updated: daily (Australia/Sydney time), same publish step as the NAV history file
-- Meta block: fund, class, isin, standard (`openfunds`), standard_version, generated, schema_version
-- Data block: OFDY000070 (AuM Share Class) + OFDY000071 (its valuation date), OFDY000075
-  (NoS Share Class) + OFDY000076 (its valuation date). Fund-level equivalents exist in the
-  OpenFunds standard (OFDY000060/000065) but are not published here -- FTUSLCE is a
-  single-class fund, so the fund-level figure is always identical to the share-class figure.
+- Data block: real OpenFunds OF-ID keys only, each present only when a real row backs it —
+  identity and identifiers (Legal Fund Name, LEI Of Fund, ISIN, Share Class Currency, FIGI,
+  Bloomberg Code), service providers (Administrator, Custodian, Trustee/Responsible Entity, Legal
+  Adviser, Auditor), fee rates (Has/Applied Performance Fee, Management Fee Applied), and the two
+  OpenFunds Dynamic Data fields that change with every new valuation date (AuM Share Class + its
+  date, NoS Share Class + its date). Fund-level AuM/NoS equivalents exist in the OpenFunds
+  standard (OFDY000060/000065) but are not published here — FTUSLCE is a single-class fund, so the
+  fund-level figure is always identical to the share-class figure.
+- Fund Group Name (OFST001000) and Fund Domicile (OFST010010/010011) are deliberately absent — no
+  column backs either one in the database, and hardcoding either here would reintroduce the exact
+  staleness risk this file exists to remove, one level down.
+- ARSN, APIR, and the Buy/Sell Spread have no OpenFunds equivalent in standard version 2.13.0 —
+  checked field-by-field against the full 745-page catalog, not assumed absent — and stay
+  published only in the Identifiers table above, not in this file.
 
 ### au60etl93373_nav_audit_public_latest.adoc
 
@@ -239,7 +237,6 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/chart_performance.schema.json (performance chart data)
 - schemas/nav_history.schema.json (full daily NAV history)
 - schemas/openfunds.schema.json (OpenFunds-tagged fund summary)
-- schemas/openfunds_daily.schema.json (OpenFunds daily AuM/NoS data)
 
 Both the NAV approval audit and settlement audit files are AsciiDoc, not JSON, and have no schema.
 
