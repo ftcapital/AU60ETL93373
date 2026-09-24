@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/openfunds.schema.json",
+  "$comment": "JSON Schema for the OpenFunds-tagged fund summary file (au60etl93373_openfunds_latest.json).",
+  "title": "AU60ETL93373 OpenFunds Summary",
+  "description": "JSON Schema for au60etl93373_openfunds_latest.json, a summary of static fund and share class facts for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU), keyed by real OpenFunds OF-ID (https://openfunds.org). Only fields with a genuine OF-ID appear in the data block -- ARSN and APIR have no OpenFunds equivalent in standard version 2.13.0 and are published elsewhere in this repository (README.md, AGENTS.md) instead of here.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["fund", "class", "isin", "standard", "standard_version", "generated", "schema_version"],
+      "properties": {
+        "fund": { "type": "string", "const": "FT Capital Multi Class Investment Fund" },
+        "class": { "type": "string", "const": "US Large Cap Enhanced Complex Class" },
+        "isin": { "type": "string", "const": "AU60ETL93373" },
+        "standard": { "type": "string", "const": "openfunds", "description": "The field-tagging standard the data block's keys are drawn from." },
+        "standard_version": { "type": "string", "description": "The OpenFunds catalog version the OF-IDs below are checked against, e.g. 2.13.0." },
+        "generated": { "type": "string", "format": "date-time", "description": "Real generation timestamp, ISO 8601 UTC." },
+        "schema_version": { "type": "string" }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Real OpenFunds OF-ID keys only. A field is omitted, not given a placeholder or estimated value, when it is not confirmed against a primary source (PDS, database of record, or a document supplied directly by the fund manager).",
+      "properties": {
+        "OFST001000": { "type": "string", "description": "Fund Group Name -- overall brand of the fund's management company." },
+        "OFST010010": { "type": "string", "description": "Fund Domicile, ISO 3166-1 alpha-2." },
+        "OFST010011": { "type": "string", "description": "Fund Domicile, ISO 3166-1 alpha-3." },
+        "OFST010020": { "type": "string", "description": "Legal Fund Name Including Umbrella." },
+        "OFST010030": { "type": "string", "description": "LEI Of Fund." },
+        "OFST001300": { "type": "string", "description": "Fund Administrator Name." },
+        "OFST001400": { "type": "string", "description": "Custodian Bank Name." },
+        "OFST001430": { "type": "string", "description": "Trustee Name (recorded in this fund's own records as Responsible Entity, the Australian equivalent role)." },
+        "OFST001520": { "type": "string", "description": "Legal Adviser Name." },
+        "OFST001600": { "type": "string", "description": "Auditor Name." },
+        "OFST020000": { "type": "string", "const": "AU60ETL93373", "description": "ISIN." },
+        "OFST020540": { "type": "string", "description": "Share Class Currency, ISO 4217." },
+        "OFST020025": { "type": "string", "const": "BBG022MMSXM3", "description": "FIGI Code." },
+        "OFST020020": { "type": "string", "description": "Bloomberg Code." },
+        "OFST451027": { "type": "boolean", "description": "Has Performance Fee." },
+        "OFST451028": { "type": "number", "description": "Performance Fee Applied, as a decimal fraction (0.25 = 25%)." },
+        "OFST452000": { "type": "number", "description": "Management Fee Applied, as a decimal fraction (0.0075 = 0.75%)." }
+      },
+      "additionalProperties": false
+    }
+  }
+}

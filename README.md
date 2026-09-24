@@ -140,6 +140,36 @@ appended to, so the file always stays internally consistent.
 the number of keys in `data`. `data` has one entry for each valuation date from
 `earliest_date` to `latest_date`.
 
+## Fund at a Glance
+
+Static fund and share class facts, keyed by real [OpenFunds](https://openfunds.org) OF-ID. Not fund
+valuation data; a process/reference record.
+
+**File:** `au60etl93373_openfunds_latest.json`
+
+### Structure
+
+```
+{
+  "meta": {
+    "fund", "class", "isin",
+    "standard",          // "openfunds"
+    "standard_version",  // OpenFunds catalog version the OF-IDs were checked against
+    "generated", "schema_version"
+  },
+  "data": {
+    "<OF-ID>": <value>   // one entry for each confirmed field
+  }
+}
+```
+
+Only fields with a real OpenFunds OF-ID appear in `data`. ARSN and APIR have no OpenFunds
+equivalent as of catalog version 2.13.0 (checked field-by-field against the full catalog, not
+assumed absent) and stay published only in the Identifiers table above.
+
+Updated manually, when a static fund fact changes (fee rate, service provider, identifier) — not a
+fixed daily schedule, unlike the NAV/MPI/performance files above.
+
 ## NAV Approval Audit
 
 Redacted public record of the daily NAV approval workflow — import, approval, and publish steps (Apex NAV import, approval, BDUP/Lipper exports, Reda001 and performance data publish) for the most recently completed run. Not fund valuation data; a process/audit record.
@@ -197,6 +227,12 @@ Fetch the latest NAV approval audit record (and verify it against its sha256):
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_audit_public_latest.adoc
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_audit_public_latest.adoc.sha256
+```
+
+Fetch the latest fund at a glance data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
 ```
 
 Fetch the latest settlement audit record (and verify it against its sha256):
