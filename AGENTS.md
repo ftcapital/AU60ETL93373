@@ -79,6 +79,23 @@ process/reference record, not fund valuation data. Not covered by the Authority 
   standard version 2.13.0 — checked field-by-field against the full 745-page catalog, not assumed
   absent — and stay published only in the Identifiers table above, not in this file.
 
+### au60etl93373_openfunds_daily_latest.json
+
+The two OpenFunds Dynamic Data fields that change with every new valuation date --
+AuM Share Class and NoS Share Class, keyed by real OpenFunds OF-ID (https://openfunds.org).
+Same real single source of truth as au60etl93373_nav_history_latest.json's own total_nav/
+units_on_issue fields, a single-row OpenFunds-tagged view of it, not a second query path.
+Kept separate from au60etl93373_openfunds_latest.json (static fund/share-class facts that
+do not change daily).
+
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_daily_latest.json
+- Updated: daily (Australia/Sydney time), same publish step as the NAV history file
+- Meta block: fund, class, isin, standard (`openfunds`), standard_version, generated, schema_version
+- Data block: OFDY000070 (AuM Share Class) + OFDY000071 (its valuation date), OFDY000075
+  (NoS Share Class) + OFDY000076 (its valuation date). Fund-level equivalents exist in the
+  OpenFunds standard (OFDY000060/000065) but are not published here -- FTUSLCE is a
+  single-class fund, so the fund-level figure is always identical to the share-class figure.
+
 ### au60etl93373_nav_audit_public_latest.adoc
 
 Redacted public record of the daily NAV approval workflow (Apex NAV import, approval, BDUP/Lipper/Morningstar exports, Reda001 and performance data publish) for the most recently completed run — a process/audit record, not fund valuation data. Not covered by the Authority section above.
@@ -222,6 +239,7 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/chart_performance.schema.json (performance chart data)
 - schemas/nav_history.schema.json (full daily NAV history)
 - schemas/openfunds.schema.json (OpenFunds-tagged fund summary)
+- schemas/openfunds_daily.schema.json (OpenFunds daily AuM/NoS data)
 
 Both the NAV approval audit and settlement audit files are AsciiDoc, not JSON, and have no schema.
 

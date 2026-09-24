@@ -170,6 +170,40 @@ assumed absent) and stay published only in the Identifiers table above.
 Updated manually, when a static fund fact changes (fee rate, service provider, identifier) — not a
 fixed daily schedule, unlike the NAV/MPI/performance files above.
 
+## OpenFunds Daily Summary
+
+The two [OpenFunds](https://openfunds.org) Dynamic Data fields that change with every new
+valuation date -- AuM Share Class and NoS Share Class. Same real single source of truth as the
+NAV History file's own `total_nav`/`units_on_issue` fields, a single-row OpenFunds-tagged view of
+it, not a second query path. Kept separate from the static Fund at a Glance file above, whose
+fields do not change daily.
+
+**File:** `au60etl93373_openfunds_daily_latest.json`
+
+### Structure
+
+```
+{
+  "meta": {
+    "fund", "class", "isin",
+    "standard", "standard_version",
+    "generated", "schema_version"
+  },
+  "data": {
+    "OFDY000070",  // AuM Share Class
+    "OFDY000071",  // AuM Share Class Date
+    "OFDY000075",  // NoS Share Class
+    "OFDY000076"   // NoS Share Class Date
+  }
+}
+```
+
+Fund-level equivalents exist in the OpenFunds standard (`OFDY000060`/`OFDY000065`) but are not
+published here -- FTUSLCE is a single-class fund, so the fund-level figure is always identical to
+the share-class figure.
+
+Updated daily (Australia/Sydney time), the same publish step as the NAV history file above.
+
 ## NAV Approval Audit
 
 Redacted public record of the daily NAV approval workflow — import, approval, and publish steps (Apex NAV import, approval, BDUP/Lipper exports, Reda001 and performance data publish) for the most recently completed run. Not fund valuation data; a process/audit record.
@@ -233,6 +267,12 @@ Fetch the latest fund at a glance data:
 
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
+```
+
+Fetch the latest OpenFunds daily summary data:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_daily_latest.json
 ```
 
 Fetch the latest settlement audit record (and verify it against its sha256):
