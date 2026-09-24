@@ -145,7 +145,7 @@ the number of keys in `data`. `data` has one entry for each valuation date from
 Static fund and share class facts, keyed by real [OpenFunds](https://openfunds.org) OF-ID. Not fund
 valuation data; a process/reference record.
 
-**File:** `au60etl93373_fund_at_a_glance_latest.json`
+**File:** `au60etl93373_openfunds_latest.json`
 
 ### Structure
 
@@ -232,7 +232,7 @@ https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_nav_a
 Fetch the latest fund at a glance data:
 
 ```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_fund_at_a_glance_latest.json
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
 ```
 
 Fetch the latest settlement audit record (and verify it against its sha256):

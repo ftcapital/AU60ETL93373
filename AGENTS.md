@@ -65,12 +65,12 @@ to, so the file always stays internally consistent.
 - Data block: one entry for each valuation date, keyed by date (YYYY-MM-DD), each
   entry gives nav_unit_price, entry_price, exit_price, total_nav, units_on_issue
 
-### au60etl93373_fund_at_a_glance_latest.json
+### au60etl93373_openfunds_latest.json
 
 Static fund and share class facts, keyed by real OpenFunds OF-ID (https://openfunds.org) — a
 process/reference record, not fund valuation data. Not covered by the Authority section above.
 
-- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_fund_at_a_glance_latest.json
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_openfunds_latest.json
 - Updated: manually, when a static fund fact changes (fee rate, service provider, identifier) —
   not a fixed daily schedule
 - Meta block: fund, class, isin, standard (`openfunds`), standard_version (the OpenFunds catalog
@@ -221,7 +221,7 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/mpi.schema.json (open futures positions)
 - schemas/chart_performance.schema.json (performance chart data)
 - schemas/nav_history.schema.json (full daily NAV history)
-- schemas/fund_at_a_glance.schema.json (OpenFunds-tagged fund summary)
+- schemas/openfunds.schema.json (OpenFunds-tagged fund summary)
 
 Both the NAV approval audit and settlement audit files are AsciiDoc, not JSON, and have no schema.
 
