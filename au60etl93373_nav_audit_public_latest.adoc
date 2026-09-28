@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-09-24
+= FTUS NAV Approval Audit -- 2026-09-25
 FT Capital Pty Limited
-2026-09-24
-:description: NAV approval workflow audit record for FTUS 2026-09-24 (public)
-== Run 1: 2026-09-25T08:02:50 -- FAILED at step 15
+2026-09-25
+:description: NAV approval workflow audit record for FTUS 2026-09-25 (public)
+== Run 1: 2026-09-28T08:20:44 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-09-24
+|NAV date |2026-09-25
 |Class |FTUS
 |Chart rebase date |2026-04-09
 |ISIN |AU60ETL93373
@@ -24,19 +24,20 @@ FT Capital Pty Limited
 
 |1 |Import Apex NAV email |OK
 |2 |Fetch and save Apex Performance Fee file |OK
-|3 |Approve NAV |OK
-|4 |Send approval email to Apex |OK
-|5 |Export BDUP (FTUSLCE) |OK
-|6 |Export Lipper price file |OK
-|7 |Morningstar price feed [placeholder] |OK
-|8 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
-|9 |Export performance data |OK
-|10 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
-|11 |Generate chart image (not published) |OK
-|12 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
-|13 |Export and publish OpenFunds data to https://github.com/ftcapital/AU60ETL93373 |OK
-|14 |Fund Metrics |OK
-|15 |Metrics email |Failed
+|3 |Fetch and save Apex Bank Statement file |OK
+|4 |Approve NAV |OK
+|5 |Send approval email to Apex |OK
+|6 |Export BDUP (FTUSLCE) |OK
+|7 |Export Lipper price file |OK
+|8 |Morningstar price feed [placeholder] |OK
+|9 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
+|10 |Export performance data |OK
+|11 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
+|12 |Generate chart image (not published) |OK
+|13 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
+|14 |Export and publish OpenFunds data to https://github.com/ftcapital/AU60ETL93373 |OK
+|15 |Fund Metrics |OK
+|16 |Metrics email |OK
 |===
 
-_Generated: 2026-09-25T08:02:50_
+_Generated: 2026-09-28T08:20:44_
