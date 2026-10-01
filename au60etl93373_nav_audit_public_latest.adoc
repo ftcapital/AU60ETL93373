@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-09-29
+= FTUS NAV Approval Audit -- 2026-09-30
 FT Capital Pty Limited
-2026-09-29
-:description: NAV approval workflow audit record for FTUS 2026-09-29 (public)
-== Run 1: 2026-09-30T09:42:08 -- COMPLETE
+2026-09-30
+:description: NAV approval workflow audit record for FTUS 2026-09-30 (public)
+== Run 1: 2026-10-01T06:48:23 -- FAILED at step 1
 
 === Parameters
 
@@ -10,10 +10,10 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-09-29
+|NAV date |2026-09-30
 |Class |FTUS
 |Chart rebase date |2026-04-09
-|ISIN |AU60ETL93373
+|ISIN |(none)
 |===
 
 === Steps
@@ -22,22 +22,22 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |Import Apex NAV email |OK
-|2 |Fetch and save Apex Performance Fee file |OK
-|3 |Fetch and save Apex Bank Statement file |OK
-|4 |Approve NAV |OK
-|5 |Send approval email to Apex |OK
-|6 |Export BDUP (FTUSLCE) |OK
-|7 |Export Lipper price file |OK
-|8 |Morningstar price feed [placeholder] |OK
-|9 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
-|10 |Export performance data |OK
-|11 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
-|12 |Generate chart image (not published) |OK
-|13 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |OK
-|14 |Export and publish OpenFunds data to https://github.com/ftcapital/AU60ETL93373 |OK
-|15 |Fund Metrics |OK
-|16 |Metrics email |OK
+|1 |Import Apex NAV email |Failed
+|2 |Fetch and save Apex Performance Fee file |Not run
+|3 |Fetch and save Apex Bank Statement file |Not run
+|4 |Approve NAV |Not run
+|5 |Send approval email to Apex |Not run
+|6 |Export BDUP (FTUSLCE) |Not run
+|7 |Export Lipper price file |Not run
+|8 |Morningstar price feed [placeholder] |Not run
+|9 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |Not run
+|10 |Export performance data |Not run
+|11 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |Not run
+|12 |Generate chart image (not published) |Not run
+|13 |Export and publish NAV history to https://github.com/ftcapital/AU60ETL93373 |Not run
+|14 |Export and publish OpenFunds data to https://github.com/ftcapital/AU60ETL93373 |Not run
+|15 |Fund Metrics |Not run
+|16 |Metrics email |Not run
 |===
 
-_Generated: 2026-09-30T09:42:08_
+_Generated: 2026-10-01T06:48:23_
