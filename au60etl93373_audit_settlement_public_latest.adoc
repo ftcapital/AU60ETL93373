@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-10-08
 :description: Settlement audit record for FTUS 2026-10-08
-== Run 2: 2026-10-09T03:08:49 -- FAILED at step 13
+== Run 3: 2026-10-09T03:21:20 -- COMPLETE
 
 === Parameters
 
@@ -36,12 +36,12 @@ FT Capital Pty Limited
 |10 |Generate PCF report |OK
 |11 |Generate MPI report |OK
 |12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
-|13 |Apex daily email sent |Failed
-|14 |Send PCF to Solactive |Not run
+|13 |Apex daily email sent |OK
+|14 |Send PCF to Solactive |OK
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-10-09T03:08:49_
+_Generated: 2026-10-09T03:21:20_
