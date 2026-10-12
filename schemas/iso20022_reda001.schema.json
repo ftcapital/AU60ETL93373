@@ -355,7 +355,7 @@
                         },
                         "ByUsrDfndTmPrd": {
                           "type": "array",
-                          "description": "One element for each requested rolling period, currently 30 and 90 days.",
+                          "description": "One element for each requested rolling period, currently 30, 90, and 180 days.",
                           "items": {
                             "type": "object",
                             "required": [
