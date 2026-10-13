@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-10-12
 :description: NAV approval workflow audit record for FTUS 2026-10-12 (public)
-== Run 1: 2026-10-13T06:55:18 -- FAILED at step 1
+== Run 2: 2026-10-13T07:20:32 -- FAILED at step 1
 
 === Parameters
 
@@ -40,4 +40,4 @@ FT Capital Pty Limited
 |16 |Metrics email |Not run
 |===
 
-_Generated: 2026-10-13T06:55:18_
+_Generated: 2026-10-13T07:20:32_
