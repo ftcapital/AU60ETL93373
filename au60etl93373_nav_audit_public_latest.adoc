@@ -2,7 +2,7 @@
 FT Capital Pty Limited
 2026-10-12
 :description: NAV approval workflow audit record for FTUS 2026-10-12 (public)
-== Run 2: 2026-10-13T07:20:32 -- FAILED at step 1
+== Run 3: 2026-10-13T07:33:05 -- FAILED at step 2
 
 === Parameters
 
@@ -22,8 +22,8 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |Import Apex NAV email |Failed
-|2 |Fetch and save Apex Performance Fee file |Not run
+|1 |Import Apex NAV email |OK
+|2 |Fetch and save Apex Performance Fee file |Failed
 |3 |Fetch and save Apex Bank Statement file |Not run
 |4 |Approve NAV |Not run
 |5 |Send approval email to Apex |Not run
@@ -40,4 +40,4 @@ FT Capital Pty Limited
 |16 |Metrics email |Not run
 |===
 
-_Generated: 2026-10-13T07:20:32_
+_Generated: 2026-10-13T07:33:05_
