@@ -154,6 +154,21 @@ covered by the Authority section above.
 - A separate file for each financial year end — never overwritten. Check this repository's own
   file listing for the most recent `<YYYYMMDD>`.
 
+### au60etl93373_commentary_<YYYYMMDD>.json
+
+Monthly market commentary supplied by the Investment Manager — a machine-readable companion to
+the free-text commentary already published in the human-readable monthly factsheet. Not covered by
+the Authority section above; qualitative, not fund valuation data.
+
+- Current file: `au60etl93373_commentary_20260930.json`
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20260930.json
+- Updated: monthly, published manually, same cadence as the factsheet
+- Meta block: fund, class, class_code, isin, reporting_date, author, author_title, generated,
+  schema_version
+- Data block: `commentary` — the full commentary text, exactly as supplied by the author
+- A separate file for each reporting period — never overwritten, the same convention as the
+  RG 240 annual report. Check this repository's own file listing for the most recent `<YYYYMMDD>`.
+
 ## Data Refresh
 
 - Frequency: daily following NAV approval
@@ -237,6 +252,7 @@ JSON Schema definitions are published for all JSON data files:
 - schemas/chart_performance.schema.json (performance chart data)
 - schemas/nav_history.schema.json (full daily NAV history)
 - schemas/openfunds.schema.json (OpenFunds-tagged fund summary)
+- schemas/commentary.schema.json (monthly market commentary)
 
 Both the NAV approval audit and settlement audit files are AsciiDoc, not JSON, and have no schema.
 

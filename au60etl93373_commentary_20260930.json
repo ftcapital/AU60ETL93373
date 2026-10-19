@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "fund": "FT Capital Multi Class Investment Fund",
+    "class": "US Large Cap Enhanced Complex Class",
+    "class_code": "FTUS",
+    "isin": "AU60ETL93373",
+    "reporting_date": "2026-09-30",
+    "author": "Anthony Polias",
+    "author_title": "Senior Portfolio Manager",
+    "generated": "2026-10-19T05:41:49Z",
+    "schema_version": "1"
+  },
+  "data": {
+    "commentary": "U.S. equities ended September on a quieter note than the headline number suggests. The S&P 500 slipped modestly on the month, roughly -0.3% to -0.5% depending on methodology, leaving the index about 1% below its August record high and up close to 13% year-to-date. The Dow Jones Industrial Average fared worse, down 4.3%, while the tech-heavy Nasdaq Composite gained 1.9%. Beneath the surface, breadth deteriorated sharply. Roughly three-quarters of S&P 500 constituents declined during the month, and the share of stocks above their 200-day moving average fell to around 49%, from close to 75% over the summer. Index-level resilience was concentrated in AI-linked mega-caps, with Information Technology and Communication Services the only sectors to post meaningful gains. Financials were the clear laggard, falling more than 6% for their weakest month since March 2023. The Federal Reserve was the central macro event. On 16 September, the FOMC voted unanimously to raise the federal funds rate by 25 basis points to 3.75%-4.00%, its first hike since 2023 and the first under Chair Kevin Warsh. The move was widely anticipated after a hot August inflation print, and Treasury yields had already moved higher in advance. The updated projections pointed to the possibility of further tightening before year-end, while Warsh offered little explicit forward guidance. Rising yields, concerns over government debt, and oil prices back above $100 a barrel, amid ongoing Iran-related tensions, kept inflation fears elevated and weighed on equity valuations. The Fund's derivatives overlay was a key contributor to performance during a month marked by shifting rate expectations, rising oil prices and geopolitical headlines. By using options and futures to actively manage equity exposure, the Fund was able to dampen the impact of intra-month swings, particularly the weakness in rate-sensitive sectors, while still participating in the strength of AI-linked technology names. This helped the Fund deliver a smoother return profile than the broader market, and it returned 0.04% in September, outperforming its benchmark."
+  }
+}

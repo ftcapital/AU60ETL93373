@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/schemas/commentary.schema.json",
+  "$comment": "JSON Schema for a monthly commentary file (au60etl93373_commentary_YYYYMMDD.json).",
+  "title": "AU60ETL93373 Monthly Commentary",
+  "description": "JSON Schema for au60etl93373_commentary_YYYYMMDD.json, the Investment Manager's monthly market commentary for the FT Capital Multi Class Investment Fund US Large Cap Enhanced Complex Class (ISIN AU60ETL93373, APIR ETL9337AU). One file is published for each reporting period and never overwritten, the same convention as the RG 240 annual report. A machine-readable companion to the free-text commentary already published in the human-readable monthly factsheet.",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["fund", "class", "class_code", "isin", "reporting_date", "author", "author_title", "generated", "schema_version"],
+      "properties": {
+        "fund": { "type": "string", "description": "Fund name." },
+        "class": { "type": "string", "description": "Class name." },
+        "class_code": { "type": "string", "const": "FTUS", "description": "Internal class code." },
+        "isin": { "type": "string", "const": "AU60ETL93373" },
+        "reporting_date": { "type": "string", "format": "date", "description": "The period this commentary covers, the last day of the reporting month." },
+        "author": { "type": "string", "description": "Real name of the person who supplied the commentary." },
+        "author_title": { "type": "string", "description": "Real title of the author within the Investment Manager." },
+        "generated": { "type": "string", "format": "date-time", "description": "Real publish timestamp, ISO 8601 UTC." },
+        "schema_version": { "type": "string" }
+      }
+    },
+    "data": {
+      "type": "object",
+      "required": ["commentary"],
+      "properties": {
+        "commentary": { "type": "string", "description": "Full commentary text, exactly as supplied by the author, no paragraph markup." }
+      }
+    }
+  }
+}

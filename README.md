@@ -227,6 +227,29 @@ Annual RG 240 disclosure report (ASIC Regulatory Guide 240, Benchmark 2), one fi
 
 Format is Markdown, with a YAML frontmatter block (`schema`, `schema_version`, `document_id`, `reporting_date`, `generated_at`).
 
+## Monthly Commentary
+
+Market commentary supplied by the Investment Manager each period — a machine-readable companion to the free-text commentary already published in the human-readable monthly factsheet.
+
+**File:** `au60etl93373_commentary_20260930.json` (current period — a separate file exists for each reporting period, never overwritten; check this repository's own file listing for the most recent date)
+
+### Structure
+
+```
+{
+  "meta": {
+    "fund", "class", "class_code", "isin",
+    "reporting_date", "author", "author_title",
+    "generated", "schema_version"
+  },
+  "data": {
+    "commentary"   // full commentary text, exactly as supplied by the author
+  }
+}
+```
+
+Format is JSON, following the same `meta`/`data` convention as the other JSON files in this repository.
+
 ## Usage
 
 Fetch the latest NAV data:
@@ -277,6 +300,12 @@ Fetch the current RG 240 annual report:
 
 ```
 https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_rg240_annual_20260630.md
+```
+
+Fetch the current monthly commentary:
+
+```
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20260930.json
 ```
 
 ## Links
