@@ -1,8 +1,8 @@
-= FTUS Daily Settlement Audit -- 2026-10-16
+= FTUS Daily Settlement Audit -- 2026-10-19
 FT Capital Pty Limited
-2026-10-16
-:description: Settlement audit record for FTUS 2026-10-16
-== Run 1: 2026-10-18T21:54:45 -- COMPLETE
+2026-10-19
+:description: Settlement audit record for FTUS 2026-10-19
+== Run 1: 2026-10-20T02:58:26 -- FAILED at step 15
 
 === Parameters
 
@@ -10,11 +10,11 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|Settlement date |2026-10-16
+|Settlement date |2026-10-19
 |CME settlement day |Yes
-|AUD/USD NY1700 (BFIX NY1700) |0.6945
-|AUD/USD LN1600 (BFIX LN1600) |0.6965
-|Benchmark |ES1 ESZ6 = 7704.25
+|AUD/USD NY1700 (BFIX NY1700) |0.6980
+|AUD/USD LN1600 (BFIX LN1600) |0.6985
+|Benchmark |ES1 ESZ6 = 7734.50
 |Fund / Class |FTUS / FTUS
 |===
 
@@ -24,13 +24,13 @@ FT Capital Pty Limited
 |===
 |Step |Description |Status
 
-|1 |AUD/USD NY1700 0.6945 (BFIX NY1700) |OK
-|2 |AUD/USD LN1600 0.6965 (BFIX LN1600) |OK
+|1 |AUD/USD NY1700 0.6980 (BFIX NY1700) |OK
+|2 |AUD/USD LN1600 0.6985 (BFIX LN1600) |OK
 |3 |FCM trade confirm report import |OK
 |4 |FCM interest report import |OK
 |5 |FCM statement archive |OK
 |6 |Portfolio settlements |OK
-|7 |Benchmark ES1 ESZ6 = 7704.25 |OK
+|7 |Benchmark ES1 ESZ6 = 7734.50 |OK
 |8 |Generate portfolio trades report |OK
 |9 |Generate portfolio settlement report |OK
 |10 |Generate PCF report |OK
@@ -38,11 +38,11 @@ FT Capital Pty Limited
 |12 |MPI published to https://github.com/ftcapital/AU60ETL93373 |OK
 |13 |Apex daily email sent |OK
 |14 |Send PCF to Solactive |OK
-|15 |Indicative NAV report sent |OK
+|15 |Indicative NAV report sent |Failed
 |===
 
 === Output
 
 * au60etl93373_mpi_latest.csv -- published to https://github.com/ftcapital/AU60ETL93373
 
-_Generated: 2026-10-18T21:54:45_
+_Generated: 2026-10-20T02:58:26_
