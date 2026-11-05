@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-11-03
+= FTUS NAV Approval Audit -- 2026-11-04
 FT Capital Pty Limited
-2026-11-03
-:description: NAV approval workflow audit record for FTUS 2026-11-03 (public)
-== Run 1: 2026-11-04T08:21:52 -- COMPLETE
+2026-11-04
+:description: NAV approval workflow audit record for FTUS 2026-11-04 (public)
+== Run 1: 2026-11-05T07:19:03 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-11-03
+|NAV date |2026-11-04
 |Class |FTUS
 |Chart rebase date |2026-04-07
 |ISIN |AU60ETL93373
@@ -41,4 +41,4 @@ FT Capital Pty Limited
 |17 |Sync NAV/MPI mirror to kairos-saadik-fondihaldus |OK
 |===
 
-_Generated: 2026-11-04T08:21:52_
+_Generated: 2026-11-05T07:19:03_
