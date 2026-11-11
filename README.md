@@ -231,7 +231,7 @@ Format is Markdown, with a YAML frontmatter block (`schema`, `schema_version`, `
 
 Market commentary supplied by the Investment Manager each period — a machine-readable companion to the free-text commentary already published in the human-readable monthly factsheet.
 
-**File:** `au60etl93373_commentary_20260930.json` (current period — a separate file exists for each reporting period, never overwritten; check this repository's own file listing for the most recent date)
+**File:** `au60etl93373_commentary_20261030.json` (current period — a separate file exists for each reporting period, never overwritten; check this repository's own file listing for the most recent date)
 
 ### Structure
 
@@ -305,7 +305,7 @@ https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_rg240
 Fetch the current monthly commentary:
 
 ```
-https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20260930.json
+https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20261030.json
 ```
 
 ## Links

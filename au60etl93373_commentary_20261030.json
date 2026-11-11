@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "fund": "FT Capital Multi Class Investment Fund",
+    "class": "US Large Cap Enhanced Complex Class",
+    "class_code": "FTUS",
+    "isin": "AU60ETL93373",
+    "reporting_date": "2026-10-30",
+    "author": "Anthony Polias",
+    "author_title": "Senior Portfolio Manager",
+    "generated": "2026-11-11T04:46:00Z",
+    "schema_version": "1"
+  },
+  "data": {
+    "commentary": "The Fund tracked the S&P 500 futures closely through October and finished the month 0.56 percentage points ahead of its benchmark. It captured the early-month rally well, rising 2.34% to its 6 October peak as the index hit its record, then gave ground through the mid-month AI sell-off, with its sharpest daily falls on 14 October (-1.14%), 16 October (-1.36%) and 22 October (-1.26%), broadly in line with the benchmark's moves on the same days. A late-month recovery from 26 October restored most of the gains before the final two sessions, when the Fund fell 0.32% on 29 October and 1.97% on 30 October as Intel and Amazon results triggered the benchmark's worst day since June, a 1.81% fall. The Fund returned -0.76% for October, outperforming its benchmark by 0.56 percentage points. U.S. equities fell for a second straight month in October, down 0.93%, as investors rotated out of AI-linked mega-caps. The index set a record close of 7,818.93 on 6 October before drifting lower on doubts over the payoff from AI capital spending, and AI-linked names shed an estimated US$5 trillion in market value between the peak and month end. Disappointing Intel and Amazon results drove a 1.82% fall on 30 October, the index's worst day since June, and left the Nasdaq Composite down 5.3% for the month, its weakest since March 2025. The Dow Jones Industrial Average rose 1.7% and the Russell 2000 gained 0.5%. Beneath the headline, market breadth improved sharply. Money moved into healthcare, consumer, energy and industrial blue chips, value stocks reached record highs on the final day, and the equal-weight S&P 500 outperformed the cap-weighted index by almost six percentage points, up 4.9% against the headline's 0.9% decline. The VIX spiked to 23.9 before settling at 19.4. The Federal Reserve held its target range at 3.75%-4.00% on 28 October in a 10-2 vote, after a 25 basis point hike in September, with markets continuing to price a further hike in December. The 10-year Treasury yield fell for a fourth straight week to 4.93%. The Australian dollar had a strong month on expectations of an RBA rate rise, supported by September-quarter CPI of 4.3%. The Fund enters November with the index about 3% below its record and a cleaner positioning backdrop after October's de-rating of AI leaders. Three things will set the tone into year end: the 3 November US midterm elections, historically a positive seasonal marker for the S&P 500 through the following June; the Fed's December meeting, where markets are pricing a further hike; and whether October's broadening in market participation persists if AI spending doubts linger. Seasonality is supportive, with November and December averaging gains of 1.6% and 1.2% since 1964, the strongest back-to-back stretch of the calendar. The Fund remains fully invested in US large caps, consistent with its mandate."
+  }
+}

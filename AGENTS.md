@@ -160,8 +160,8 @@ Monthly market commentary supplied by the Investment Manager — a machine-reada
 the free-text commentary already published in the human-readable monthly factsheet. Not covered by
 the Authority section above; qualitative, not fund valuation data.
 
-- Current file: `au60etl93373_commentary_20260930.json`
-- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20260930.json
+- Current file: `au60etl93373_commentary_20261030.json`
+- Raw URL: https://raw.githubusercontent.com/ftcapital/AU60ETL93373/main/au60etl93373_commentary_20261030.json
 - Updated: monthly, published manually, same cadence as the factsheet
 - Meta block: fund, class, class_code, isin, reporting_date, author, author_title, generated,
   schema_version
