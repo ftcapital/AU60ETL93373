@@ -1,8 +1,8 @@
-= FTUS NAV Approval Audit -- 2026-11-16
+= FTUS NAV Approval Audit -- 2026-11-18
 FT Capital Pty Limited
-2026-11-16
-:description: NAV approval workflow audit record for FTUS 2026-11-16 (public)
-== Run 2: 2026-11-17T06:57:19 -- COMPLETE
+2026-11-18
+:description: NAV approval workflow audit record for FTUS 2026-11-18 (public)
+== Run 1: 2026-11-19T06:03:42 -- COMPLETE
 
 === Parameters
 
@@ -10,7 +10,7 @@ FT Capital Pty Limited
 |===
 |Parameter |Value
 
-|NAV date |2026-11-16
+|NAV date |2026-11-18
 |Class |FTUS
 |Chart rebase date |2026-04-07
 |ISIN |AU60ETL93373
@@ -29,7 +29,7 @@ FT Capital Pty Limited
 |5 |Send approval email to Apex |OK
 |6 |Export BDUP (FTUSLCE) |OK
 |7 |Export Lipper price file |OK
-|8 |Morningstar price feed [placeholder] |OK
+|8 |Export Morningstar price file |OK
 |9 |Export and publish ISO 20022 reda001 to https://github.com/ftcapital/AU60ETL93373 |OK
 |10 |Export performance data |OK
 |11 |Publish performance data to https://github.com/ftcapital/AU60ETL93373 |OK
@@ -41,4 +41,4 @@ FT Capital Pty Limited
 |17 |Sync NAV/MPI mirror to kairos-saadik-fondihaldus |OK
 |===
 
-_Generated: 2026-11-17T06:57:19_
+_Generated: 2026-11-19T06:03:42_
